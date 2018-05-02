@@ -1,0 +1,6 @@
+[submodule "roboy_communication"]
+	path = roboy_communication
+	url = https://github.com/Roboy/roboy_communication.git
+[submodule "roboy_models"]
+	path = roboy_models
+	url = https://github.com/Roboy/roboy_models.git
