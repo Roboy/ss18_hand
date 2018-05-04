@@ -1,0 +1,2 @@
+roboy_communication/middleware:roboy_communication/roboy_communication_actions:roboy_communication/roboy_communication_cognition:roboy_communication/roboy_communication_control:roboy_communication/simulation:roboy_hand
+-DCATKIN_DEVEL_PREFIX=/home/barisyazici/ss18_hand/devel -DCMAKE_INSTALL_PREFIX=/home/barisyazici/ss18_hand/install -G Unix Makefiles

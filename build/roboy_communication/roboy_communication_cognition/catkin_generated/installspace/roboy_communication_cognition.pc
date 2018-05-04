@@ -1,0 +1,8 @@
+prefix=/home/barisyazici/ss18_hand/install
+
+Name: roboy_communication_cognition
+Description: Description of roboy_communication_cognition
+Version: 2.0.1
+Cflags: -I/home/barisyazici/ss18_hand/install/include
+Libs: -L/home/barisyazici/ss18_hand/install/lib 
+Requires: message_runtime std_msgs

@@ -1,0 +1,31 @@
+
+(cl:in-package :asdf)
+
+(defsystem "roboy_communication_middleware-srv"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils :geometry_msgs-msg
+               :roboy_communication_middleware-msg
+)
+  :components ((:file "_package")
+    (:file "ControlMode" :depends-on ("_package_ControlMode"))
+    (:file "_package_ControlMode" :depends-on ("_package"))
+    (:file "DanceTrajectory" :depends-on ("_package_DanceTrajectory"))
+    (:file "_package_DanceTrajectory" :depends-on ("_package"))
+    (:file "EmergencyStop" :depends-on ("_package_EmergencyStop"))
+    (:file "_package_EmergencyStop" :depends-on ("_package"))
+    (:file "Initialize" :depends-on ("_package_Initialize"))
+    (:file "_package_Initialize" :depends-on ("_package"))
+    (:file "InverseKinematics" :depends-on ("_package_InverseKinematics"))
+    (:file "_package_InverseKinematics" :depends-on ("_package"))
+    (:file "MotorCalibrationService" :depends-on ("_package_MotorCalibrationService"))
+    (:file "_package_MotorCalibrationService" :depends-on ("_package"))
+    (:file "MotorConfigService" :depends-on ("_package_MotorConfigService"))
+    (:file "_package_MotorConfigService" :depends-on ("_package"))
+    (:file "Record" :depends-on ("_package_Record"))
+    (:file "_package_Record" :depends-on ("_package"))
+    (:file "SetInt16" :depends-on ("_package_SetInt16"))
+    (:file "_package_SetInt16" :depends-on ("_package"))
+    (:file "SetTrajectory" :depends-on ("_package_SetTrajectory"))
+    (:file "_package_SetTrajectory" :depends-on ("_package"))
+    (:file "SystemCheck" :depends-on ("_package_SystemCheck"))
+    (:file "_package_SystemCheck" :depends-on ("_package"))
+  ))

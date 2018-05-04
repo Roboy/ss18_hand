@@ -1,0 +1,2 @@
+set(roboy_communication_simulation_MESSAGE_FILES "msgs/Abortion.msg;msgs/BodyPart.msg;msgs/COM.msg;msgs/ControllerParameters.msg;msgs/ExternalForce.msg;msgs/ForceTorque.msg;msgs/IMU.msg;msgs/Input.msg;msgs/Joint.msg;msgs/LegState.msg;msgs/Model.msg;msgs/MotorControl.msg;msgs/RecordingControl.msg;msgs/Tendon.msg;msgs/TendonInitialization.msg;msgs/TendonUpdate.msg;msgs/VisualizationControl.msg")
+set(roboy_communication_simulation_SERVICE_FILES "srvs/UpdateControllerParameters.srv;srvs/Energies.srv")
