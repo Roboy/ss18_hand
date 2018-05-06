@@ -1,0 +1,3 @@
+[submodule "src/roboy_communication"]
+	path = src/roboy_communication
+	url = https://github.com/Roboy/roboy_communication.git
