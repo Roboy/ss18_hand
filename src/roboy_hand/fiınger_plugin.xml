@@ -1,0 +1,8 @@
+<library path="libfinger_plugin">
+  <class type="FingerPlugin" 
+	 base_class_type="FingerPlugin">
+  <description>
+  	This is a tendon muscle plugin
+  </description>
+  </class>
+</library>

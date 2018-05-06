@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -std=c++11  -shared -Wl,-soname,libfinger_plugin.so -o libfinger_plugin.so CMakeFiles/finger_plugin.dir/finger_plugin.cc.o  -L/home/barisyazici/.local/lib  -L/home/barisyazici/.local/lib/gazebo-7/plugins 
