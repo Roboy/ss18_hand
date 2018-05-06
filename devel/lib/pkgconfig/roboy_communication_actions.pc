@@ -1,0 +1,8 @@
+prefix=/home/barisyazici/ss18_hand/devel
+
+Name: roboy_communication_actions
+Description: Description of roboy_communication_actions
+Version: 0.0.1
+Cflags: -I/home/barisyazici/ss18_hand/devel/include
+Libs: -L/home/barisyazici/ss18_hand/devel/lib 
+Requires: roscpp message_runtime message_generation actionlib_msgs

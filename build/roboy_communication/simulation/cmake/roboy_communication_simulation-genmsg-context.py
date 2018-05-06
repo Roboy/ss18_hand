@@ -1,0 +1,11 @@
+# generated from genmsg/cmake/pkg-genmsg.context.in
+
+messages_str = "/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/Abortion.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/BodyPart.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/COM.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/ControllerParameters.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/ExternalForce.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/ForceTorque.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/IMU.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/Input.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/Joint.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/LegState.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/Model.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/MotorControl.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/RecordingControl.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/Tendon.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/TendonInitialization.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/TendonUpdate.msg;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs/VisualizationControl.msg"
+services_str = "/home/barisyazici/ss18_hand/src/roboy_communication/simulation/srvs/UpdateControllerParameters.srv;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/srvs/Energies.srv"
+pkg_name = "roboy_communication_simulation"
+dependencies_str = "std_msgs;std_srvs;geometry_msgs"
+langs = "gencpp;geneus;genlisp;gennodejs;genpy"
+dep_include_paths_str = "roboy_communication_simulation;/home/barisyazici/ss18_hand/src/roboy_communication/simulation/msgs;std_msgs;/opt/ros/kinetic/share/std_msgs/cmake/../msg;geometry_msgs;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg"
+PYTHON_EXECUTABLE = "/usr/bin/python"
+package_has_static_sources = '' == 'TRUE'
+genmsg_check_deps_script = "/opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py"

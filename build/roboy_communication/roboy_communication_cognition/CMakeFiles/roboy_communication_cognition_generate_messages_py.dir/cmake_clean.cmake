@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/roboy_communication_cognition_generate_messages_py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/msg/_SpeechSynthesis.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/msg/_DirectionVector.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/msg/_NewFacialFeatures.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/msg/_AudioInfo.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/msg/_AudioData.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/msg/_FaceCoordinates.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_ShowPropertyValue.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_FindObject.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_ShowProperty.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_CreateInstance.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_CheckQuery.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_CallQuery.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_SaveObject.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_RecognizeObject.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_DataQuery.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_AssertProperty.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_FindInstances.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_QualityOfTone.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_EvalSeq2Seq.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_DetectFace.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_RecognizeSpeech.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_DetectIntent.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_WhichTones.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_ShowInstances.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_GenerateAnswer.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_GetObject.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_CheckProperty.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_LookAtSpeaker.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_Talk.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_QualityOfTones.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_TrainSeq2Seq.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/_DescribeScene.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/msg/__init__.py"
+  "/home/barisyazici/ss18_hand/devel/lib/python2.7/dist-packages/roboy_communication_cognition/srv/__init__.py"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/roboy_communication_cognition_generate_messages_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

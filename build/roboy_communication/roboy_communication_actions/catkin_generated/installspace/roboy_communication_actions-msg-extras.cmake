@@ -1,0 +1,2 @@
+set(roboy_communication_actions_MESSAGE_FILES "msg/PerformMovementActionFeedback.msg;msg/PerformMovementActionGoal.msg;msg/PerformMovementAction.msg;msg/PerformMovementActionResult.msg;msg/PerformMovementFeedback.msg;msg/PerformMovementGoal.msg;msg/PerformMovementResult.msg;msg/PerformMovementsActionFeedback.msg;msg/PerformMovementsActionGoal.msg;msg/PerformMovementsAction.msg;msg/PerformMovementsActionResult.msg;msg/PerformMovementsFeedback.msg;msg/PerformMovementsGoal.msg;msg/PerformMovementsResult.msg")
+set(roboy_communication_actions_SERVICE_FILES "")
