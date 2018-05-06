@@ -1,8 +1,0 @@
-prefix=/home/barisyazici/ss18_hand/install
-
-Name: roboy_communication_control
-Description: Description of roboy_communication_control
-Version: 0.0.3
-Cflags: -I/home/barisyazici/ss18_hand/install/include
-Libs: -L/home/barisyazici/ss18_hand/install/lib 
-Requires: roscpp message_runtime message_generation actionlib_msgs

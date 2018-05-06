@@ -1,5 +1,0 @@
-string action
----
-bool success
----
-int32 time_left
