@@ -13,7 +13,7 @@
     <!-- A testing model that includes the Finger  model -->
     <model name="my_finger">
       <include>
-        <uri>model://NewFingerTest</uri>
+        <uri>model://Hand_SDF</uri>
       </include>
 
       <!-- Attach the plugin to this model -->
