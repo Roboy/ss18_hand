@@ -52,14 +52,13 @@ namespace gazebo
       this->model->GetJointController()->SetPositionPID(
           this->joint->GetScopedName(), this->pid);
 
-
       // Set the joint's target velocity. This target velocity is just
       // for demonstration purposes.
       this->model->GetJointController()->SetPositionTarget(
           this->joint->GetScopedName(), 0.5);
 
-      // this->updateConnection = event::Events::ConnectWorldUpdateBegin(
-      //    boost::bind(&FingerPlugin::OnUpdate, this, _1));
+      this->updateConnection = event::Events::ConnectWorldUpdateBegin(
+         boost::bind(&FingerPlugin::OnUpdate, this, _1));
 
         // Initialize ros, if it has not already bee initialized.
         if (!ros::isInitialized())
@@ -70,41 +69,35 @@ namespace gazebo
                       ros::init_options::NoSigintHandler);
         }
 
+                // Create ros node
+        nh = ros::NodeHandlePtr(new ros::NodeHandle("roboy"));
+        spinner = boost::shared_ptr<ros::AsyncSpinner>(new ros::AsyncSpinner(1));
+        spinner->start();
+
+
 
         // Subscribe to it.
-        this->rosSub = this->rosNode->subscribe("roboy/middleware/FingerCommand", 1,&FingerPlugin::OnRosMsg, this);
-
-        // Spin up the queue helper thread.
-          this->rosQueueThread =
-                  std::thread(std::bind(&FingerPlugin::QueueThread, this));
+        this->rosSub = this->nh->subscribe("roboy/middleware/FingerCommand", 1,&FingerPlugin::OnRosMsg, this);
+        std::cerr << "subscribed to the finger command\n";
 
     }
-      /// \brief Handle an incoming message from ROS
+    /// \brief Handle an incoming message from ROS
     /// \param[in] _msg A float value that is used to set the velocity
     /// of the Velodyne.
     public: void OnRosMsg(const std_msgs::Float32ConstPtr &_msg)
-      {
-          this->SetPosition(_msg->data);
-      }
-
-      /// \brief Set the velocity of the Velodyne
+    {
+      this->SetPosition(_msg->data);
+    }
+    // \brief Set the velocity of the Velodyne
     /// \param[in] _vel New target velocity
-    public: void SetPosition(const double &_vel)
-      {
-          // Set the joint's target velocity.
-          this->model->GetJointController()->SetPositionTarget(
-                  this->joint->GetScopedName(), _vel);
-      }
+    public: void SetPosition(const double &_pos)
+    {
+      // Set the joint's target velocity.
+      this->model->GetJointController()->SetPositionTarget(
+          this->joint->GetScopedName(), _pos);
+    }
 
-    /// \brief ROS helper function that processes messages
-    private: void QueueThread()
-      {
-          static const double timeout = 0.01;
-          while (this->rosNode->ok())
-          {
-              this->rosQueue.callAvailable(ros::WallDuration(timeout));
-          }
-      }
+
 
     public: void OnUpdate(const common::UpdateInfo & /*_info*/)
     {
@@ -153,7 +146,10 @@ namespace gazebo
     private: ros::CallbackQueue rosQueue;
 
   /// \brief A thread the keeps running the rosQueue
-    private: std::thread rosQueueThread;
+    private: std::thread rosQueueThread;        
+    private: ros::NodeHandlePtr nh;
+    private: boost::shared_ptr<ros::AsyncSpinner> spinner;
+
   };
 
   // Tell Gazebo about this plugin, so that Gazebo can call Load on this plugin.

@@ -2,4 +2,4 @@
 source_root_dir = "/home/barisyazici/ss18_hand/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/opt/ros/kinetic".split(';') if "/opt/ros/kinetic" != "" else []
+underlay_workspaces = "/home/barisyazici/ss18_hand/devel;/opt/ros/kinetic".split(';') if "/home/barisyazici/ss18_hand/devel;/opt/ros/kinetic" != "" else []
