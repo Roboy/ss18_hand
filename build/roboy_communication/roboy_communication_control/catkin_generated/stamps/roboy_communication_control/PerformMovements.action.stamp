@@ -1,5 +1,0 @@
-string[] actions
----
-bool success
----
-string[] todo_movements
