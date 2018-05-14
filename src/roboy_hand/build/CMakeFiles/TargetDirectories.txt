@@ -1,3 +1,0 @@
-/home/barisyazici/finger_plugin/build/CMakeFiles/edit_cache.dir
-/home/barisyazici/finger_plugin/build/CMakeFiles/rebuild_cache.dir
-/home/barisyazici/finger_plugin/build/CMakeFiles/finger_plugin.dir
