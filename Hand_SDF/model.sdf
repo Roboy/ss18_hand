@@ -1,0 +1,761 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+	<model name="Hand_SDF_with_COMs">
+		<link name="palm">
+			<pose frame="">0.0066344568168319185 -0.01629392245904399 -0.03332476458948044 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.05104296675251234</mass>
+				<inertia>
+					<ixx>0.00011131439775642645</ixx>
+					<ixy>9.501556377739207e-06</ixy>
+					<ixz>-1.9499420421535873e-05</ixz>
+					<iyy>0.00011248999153358824</iyy>
+					<iyz>1.2677934066652766e-05</iyz>
+					<izz>3.956019128681235e-05</izz>
+				</inertia>
+			</inertial>
+			<collision name="palm_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/palm.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="palm_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/palm.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb0">
+			<pose frame="">-0.0004162617914046126 0.002691037904258013 -0.002352530353098773 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.0008540846275341303</mass>
+				<inertia>
+					<ixx>5.6144131243456205e-06</ixx>
+					<ixy>-1.3282954318601331e-09</ixy>
+					<ixz>-1.5250121120455337e-07</ixz>
+					<iyy>5.616880230386613e-06</iyy>
+					<iyz>-8.577379711309388e-08</iyz>
+					<izz>1.989492906738427e-08</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb0_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb0.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb0_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb0.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb1">
+			<pose frame="">-0.00150873725320513 0.0046570130117190205 -0.02679995145622787 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.007658427298668091</mass>
+				<inertia>
+					<ixx>8.566690684891037e-05</ixx>
+					<ixy>2.2694051411108123e-07</ixy>
+					<ixz>4.171530813017975e-06</ixz>
+					<iyy>8.55582875697288e-05</iyy>
+					<iyz>-3.849461994312906e-06</iyz>
+					<izz>6.354877008546499e-07</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb1_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb1.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb1_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb1.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb2">
+			<pose frame="">-0.003214381740272201 0.00801377840092451 -0.06585529013501792 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.003249592352352336</mass>
+				<inertia>
+					<ixx>6.685798213709965e-05</ixx>
+					<ixy>5.19247742835179e-07</ixy>
+					<ixz>7.569260272873905e-06</ixz>
+					<iyy>6.629335295029833e-05</iyy>
+					<iyz>-4.497136153333019e-06</iyz>
+					<izz>1.2198452192519205e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb2_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb2.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb2_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb2.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb3">
+			<pose frame="">-0.004394937533481358 0.01010117688067974 -0.09253199614684166 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.001388742518237493</mass>
+				<inertia>
+					<ixx>4.00125153997937e-05</ixx>
+					<ixy>4.403554129290525e-07</ixy>
+					<ixz>5.598821624236044e-06</ixz>
+					<iyy>3.945513447549926e-05</iyy>
+					<iyz>-3.0818835857968993e-06</iyz>
+					<izz>1.0514094226242953e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb3_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb3.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb3_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb3.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb0">
+			<pose frame="">-0.003977231822050766 0.0009190291240355356 -0.001938620770264456 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.0017081692550682602</mass>
+				<inertia>
+					<ixx>1.1228826248691377e-05</ixx>
+					<ixy>-2.6565908637204747e-09</ixy>
+					<ixz>-3.050024224091104e-07</ixz>
+					<iyy>1.1233760460773363e-05</iyy>
+					<iyz>-1.7154759422618972e-07</iyz>
+					<izz>3.9789858134768986e-08</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb0_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb0.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb0_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb0.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb1">
+			<pose frame="">-0.002984880527772289 0.002392073561073579 -0.026525558572861565 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.01531685459735767</mass>
+				<inertia>
+					<ixx>0.00017133381370942788</ixx>
+					<ixy>4.5388102820836265e-07</ixy>
+					<ixz>8.343061625893022e-06</ixz>
+					<iyy>0.00017111657515117223</iyy>
+					<iyz>-7.698923989725552e-06</iyz>
+					<izz>1.2709754018200865e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb1_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb1.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb1_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb1.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb2">
+			<pose frame="">-0.0013318329027423908 0.004954692579947 -0.06580557138005658 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.006499184704704744</mass>
+				<inertia>
+					<ixx>0.00013371596427419927</ixx>
+					<ixy>1.038495485670358e-06</ixy>
+					<ixz>1.513852054574781e-05</ixz>
+					<iyy>0.00013258670590059665</iyy>
+					<iyz>-8.994272306666039e-06</iyz>
+					<izz>2.4396904385038414e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb2_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb2.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb2_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb2.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb3">
+			<pose frame="">-0.00021988397903272607 0.006500033650059454 -0.09263561088652084 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.0027774850364749894</mass>
+				<inertia>
+					<ixx>8.002503079958747e-05</ixx>
+					<ixy>8.807108258581069e-07</ixy>
+					<ixz>1.1197643248472096e-05</ixz>
+					<iyy>7.891026895099856e-05</iyy>
+					<iyz>-6.1637671715938105e-06</iyz>
+					<izz>2.1028188452485937e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb3_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb3.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb3_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb3.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb0">
+			<pose frame="">-0.0071799949170955855 -0.0014563241994020191 0.0016522880976845334 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.0025622538826024013</mass>
+				<inertia>
+					<ixx>1.684323937303701e-05</ixx>
+					<ixy>-3.984886295580501e-09</ixy>
+					<ixz>-4.575036336136617e-07</ixz>
+					<iyy>1.685064069115999e-05</iyy>
+					<iyz>-2.573213913392812e-07</iyz>
+					<izz>5.968478720215302e-08</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb0_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb0.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb0_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb0.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb1">
+			<pose frame="">-0.004175328377153186 -0.0006164944550643535 -0.02253643536168259 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.022975281898589585</mass>
+				<inertia>
+					<ixx>0.0002570007206516855</ixx>
+					<ixy>6.808215422042734e-07</ixy>
+					<ixz>1.2514592437632456e-05</ixz>
+					<iyy>0.000256674862815064</iyy>
+					<iyz>-1.1548385992536672e-05</iyz>
+					<izz>1.9064631035265364e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb1_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb1.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb1_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb1.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb2">
+			<pose frame="">0.0007195705492497648 0.0009259846396326445 -0.061174829668337434 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.009748777057056823</mass>
+				<inertia>
+					<ixx>0.00020057394641129873</ixx>
+					<ixy>1.5577432285055379e-06</ixy>
+					<ixz>2.2707780818621695e-05</ixz>
+					<iyy>0.00019888005885089477</iyy>
+					<iyz>-1.3491408459999075e-05</iyz>
+					<izz>3.659535657755757e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb2_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb2.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb2_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb2.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb3">
+			<pose frame="">0.004044268282138439 0.0017750158427188626 -0.08756690736187571 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.004166227554712479</mass>
+				<inertia>
+					<ixx>0.00012003754619938106</ixx>
+					<ixy>1.321066238787159e-06</ixy>
+					<ixz>1.6796464872708124e-05</ixz>
+					<iyy>0.00011836540342649773</iyy>
+					<iyz>-9.245650757390705e-06</iyz>
+					<izz>3.1542282678728873e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb3_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb3.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb3_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb3.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb0">
+			<pose frame="">0.003576268978746004 0.0033841006572901404 0.0005114132658890222 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.0034163385101365074</mass>
+				<inertia>
+					<ixx>2.2457652497382726e-05</ixx>
+					<ixy>-5.31318172744071e-09</ixy>
+					<ixz>-6.100048448182169e-07</ixz>
+					<iyy>2.2467520921546713e-05</iyy>
+					<iyz>-3.430951884523765e-07</iyz>
+					<izz>7.957971626953756e-08</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb0_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb0.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb0_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb0.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb1">
+			<pose frame="">0.00046853274853894493 0.005669130002313691 -0.023268267927580747 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.030633709198285657</mass>
+				<inertia>
+					<ixx>0.00034266762740018487</ixx>
+					<ixy>9.077620564387207e-07</ixy>
+					<ixz>1.668612325200977e-05</ixz>
+					<iyy>0.00034223315028349827</iyy>
+					<iyz>-1.5397847977665606e-05</iyz>
+					<izz>2.541950803460099e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb1_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb1.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb1_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb1.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb2">
+			<pose frame="">-0.004483755344410951 0.009539928445257561 -0.061247951019580284 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.012998369409409504</mass>
+				<inertia>
+					<ixx>0.0002674319285483987</ixx>
+					<ixy>2.0769909713407145e-06</ixy>
+					<ixz>3.027704109149562e-05</ixz>
+					<iyy>0.00026517341180119346</iyy>
+					<iyz>-1.7988544613332064e-05</iyz>
+					<izz>4.87938087700768e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb2_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb2.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb2_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb2.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb3">
+			<pose frame="">-0.00788034135436398 0.011978191560597148 -0.08719047765346101 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.005554970072949969</mass>
+				<inertia>
+					<ixx>0.00016005006159917348</ixx>
+					<ixy>1.7614216517161997e-06</ixy>
+					<ixz>2.239528649694402e-05</ixz>
+					<iyy>0.00015782053790199576</iyy>
+					<iyz>-1.2327534343187518e-05</iyz>
+					<izz>4.205637690497156e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb3_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb3.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb3_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb3.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb0">
+			<pose frame="">0.026963577339533223 0.0047614327977676734 0.017796281168051577 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.004270423137670645</mass>
+				<inertia>
+					<ixx>2.8072065621728234e-05</ixx>
+					<ixy>-6.6414771593000955e-09</ixy>
+					<ixz>-7.625060560227592e-07</ixz>
+					<iyy>2.8084401151933205e-05</iyy>
+					<iyz>-4.288689855654701e-07</iyz>
+					<izz>9.947464533692122e-08</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb0_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb0.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb0_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb0.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb1">
+			<pose frame="">0.029096355263066944 0.005316860201778054 -0.006708929992157472 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.03829213649820698</mass>
+				<inertia>
+					<ixx>0.0004283345342617918</ixx>
+					<ixy>1.1347025705321543e-06</ixy>
+					<ixz>2.0857654064793686e-05</ixz>
+					<iyy>0.0004277914378660123</iyy>
+					<iyz>-1.9247309972974806e-05</iyz>
+					<izz>3.177438504412502e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb1_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb1.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb1_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb1.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb2">
+			<pose frame="">0.03263661607235811 0.0059736334232920575 -0.04592204237490091 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.016247961761760937</mass>
+				<inertia>
+					<ixx>0.0003342899106854769</ixx>
+					<ixy>2.5962387141757414e-06</ixy>
+					<ixz>3.784630136436716e-05</ixz>
+					<iyy>0.00033146676475147047</iyy>
+					<iyz>-2.2485680766663692e-05</iyz>
+					<izz>6.0992260962592156e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb2_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb2.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb2_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb2.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="limb3">
+			<pose frame="">0.0349998413019378 0.0063256937240010235 -0.07269961912109996 0.0 -0.0 0.0</pose>
+			<inertial>
+				<pose frame="">0.0 0.0 0.0 0 0 0</pose>
+				<mass>0.006943712591187448</mass>
+				<inertia>
+					<ixx>0.0002000625769989665</ixx>
+					<ixy>2.2017770646452494e-06</ixy>
+					<ixz>2.7994108121179974e-05</ixz>
+					<iyy>0.00019727567237749432</iyy>
+					<iyz>-1.5409417928984383e-05</iyz>
+					<izz>5.257047113121439e-06</izz>
+				</inertia>
+			</inertial>
+			<collision name="limb3_collision">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb3.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="limb3_visual">
+				<geometry>
+					<mesh>
+						<uri>model://Hand_SDF_with_COMs/meshes/CAD/limb3.stl</uri>
+						<scale>0.001 0.001 0.001</scale>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<joint name="joint_index" type="revolute">
+			<parent>palm</parent>
+			<child>limb0</child>
+			<pose frame="">-0.05326700261830917 -0.003981763957201093 -0.08761745983739118 0 0 0</pose>
+			<axis>
+				<xyz>-0.8982158988804223 0.10395584540887973 0.42708474709799693</xyz>
+				<limit>
+					<lower>-0.3490658503988659</lower>
+					<upper>1.2217304763960306</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<joint name="joint_middle" type="revolute">
+			<parent>palm</parent>
+			<child>limb0</child>
+			<pose frame="">-0.035558554313865696 -0.005437316094827314 -0.0980479562048997 0 0 0</pose>
+			<axis>
+				<xyz>-0.9631532961190301 0.19075270735641808 0.1896025654131414</xyz>
+				<limit>
+					<lower>-0.3490658503988659</lower>
+					<upper>1.2217304763960306</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<joint name="joint_ring" type="revolute">
+			<parent>palm</parent>
+			<child>limb0</child>
+			<pose frame="">-0.01605711632760549 -0.010242149593099692 -0.09869643406709143 0 0 0</pose>
+			<axis>
+				<xyz>-0.9624533879132053 0.2645500875313702 -0.06080071777156543</xyz>
+				<limit>
+					<lower>-0.3490658503988659</lower>
+					<upper>1.2217304763960306</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<joint name="joint_little" type="revolute">
+			<parent>palm</parent>
+			<child>limb0</child>
+			<pose frame="">4.686911881996991e-06 -0.017004296947514947 -0.08973664071728378 0 0 0</pose>
+			<axis>
+				<xyz>-0.8961638718505219 0.3203188164307501 -0.307060532518077</xyz>
+				<limit>
+					<lower>-0.3490658503988659</lower>
+					<upper>1.2217304763960306</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<joint name="joint_thumb" type="revolute">
+			<parent>palm</parent>
+			<child>limb0</child>
+			<pose frame="">-0.03642055484112688 0.004261870783967294 -0.03515674723046169 0 0 0</pose>
+			<axis>
+				<xyz>-0.5910450101228186 -0.6294199144411734 -0.5044763297854358</xyz>
+				<limit>
+					<lower>-0.7853981633974483</lower>
+					<upper>1.0471975511965976</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<joint name="joint01" type="revolute">
+			<parent>limb0</parent>
+			<child>limb1</child>
+			<pose frame="">-0.030901468194503682 -0.010308402446406033 -0.0742658177431574 0 0 0</pose>
+			<axis>
+				<xyz>-0.14459522599906935 -0.9616712141317323 0.23298218071062626</xyz>
+				<limit>
+					<lower>-0.3141592653589793</lower>
+					<upper>0.3141592653589793</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<joint name="joint12" type="revolute">
+			<parent>limb1</parent>
+			<child>limb2</child>
+			<pose frame="">-0.045633776924078884 0.008892602039502682 -0.0828768615618791 0 0 0</pose>
+			<axis>
+				<xyz>0.9631532961190306 -0.19075270735641855 -0.18960256541314083</xyz>
+				<limit>
+					<lower>-1.9198621771937625</lower>
+					<upper>-0.0</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<joint name="joint23" type="revolute">
+			<parent>limb2</parent>
+			<child>limb3</child>
+			<pose frame="">-0.05085024813110973 0.016707606119521264 -0.08672124869547901 0 0 0</pose>
+			<axis>
+				<xyz>0.9631532961190306 -0.19075270735641855 -0.18960256541314083</xyz>
+				<limit>
+					<lower>-1.2217304763960306</lower>
+					<upper>-0.0</upper>
+				</limit>
+				<use_parent_model_frame>0</use_parent_model_frame>
+			</axis>
+		</joint>
+		<plugin filename="libmyomuscle_plugin.so" name="myomuscle_plugin"/>
+	</model>
+</sdf>
