@@ -37,9 +37,9 @@ include_directories(
 #==============================================================================
 # Application
 #==============================================================================
-add_library(finger_plugin SHARED src/finger_plugin.cc)
+add_library(finger_plugin SHARED src/finger_plugin.cpp)
+add_dependencies(finger_plugin roboy_communication_middleware_gencpp roboy_communication_control_gencpp)
 target_link_libraries(finger_plugin ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})
-
 
 #==============================================================================
 # Installation
