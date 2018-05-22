@@ -26,6 +26,17 @@ message(STATUS ${GAZEBO_INCLUDE_DIRS})
 
 find_package(PkgConfig)
 
+add_service_files(
+  FILES
+  GestureExecution.srv
+  GestureMimic.srv
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
+
 catkin_package( DEPENDS GAZEBO CATKIN_DEPENDS rosbag message_runtime message_generation roboy_communication_middleware
 		 INCLUDE_DIRS include
 )
@@ -54,4 +65,14 @@ install(FILES
         finger_plugin.xml
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+add_executable(gesture_execution_server src/gesture_execution_server.cpp)
+target_link_libraries(gesture_execution_server ${catkin_LIBRARIES})
+add_dependencies(gesture_execution_server roboy_hand_gencpp)
+
+add_executable(gesture_mimic_server src/gesture_mimic_server.cpp)
+target_link_libraries(gesture_mimic_server ${catkin_LIBRARIES})
+add_dependencies(gesture_mimic_server roboy_hand_gencpp)
+
+
 
