@@ -10,6 +10,12 @@
 #include <gazebo/transport/transport.hh>
 #include <gazebo/msgs/msgs.hh>
 #include <roboy_communication_middleware/FingerCommand.h>
+#include <map>
+#include <common_utilities/CommonDefinitions.h>
+
+using namespace std;
+
+static const vector<string> finger_names = {"thumb","index","middle","ring","little"};
 
 namespace gazebo
 {
@@ -32,9 +38,6 @@ namespace gazebo
         /// of the Roboy Hand.
         void OnRosMsg(const roboy_communication_middleware::FingerCommandConstPtr &_msg);
 
-            // \brief Set the position of the Roboy Hand
-            /// \param[in] _vel New target Positon
-        void SetPosition(const physics::JointPtr joint,const double &_pos);
 
     void OnUpdate(const common::UpdateInfo & /*_info*/);
 
@@ -43,20 +46,11 @@ namespace gazebo
         physics::ModelPtr model;
 
         /// \brief Pointer to the joint.
-        physics::JointPtr joint0;
-
-        physics::JointPtr joint1;
-
-        physics::JointPtr joint2;
+        map<string,physics::JointPtr> joint;
         /// \brief A PID controller for the joint.
         common::PID pid;       
         // Pointer to the update event connection
         event::ConnectionPtr updateConnection;
-        /// \brief A node used for transport
-        transport::NodePtr node;
-
-        /// \brief A subscriber to a named topic.
-        transport::SubscriberPtr sub;
 
         /// \brief A node use for ROS transport
         std::unique_ptr<ros::NodeHandle> rosNode;
@@ -64,13 +58,8 @@ namespace gazebo
         /// \brief A ROS subscriber
         ros::Subscriber rosSub;
 
-        /// \brief A ROS callbackqueue that helps process messages
-        ros::CallbackQueue rosQueue;
-
         /// \brief A thread the keeps running the rosQueue
-        std::thread rosQueueThread;
         ros::NodeHandlePtr nh;
         boost::shared_ptr<ros::AsyncSpinner> spinner;
-
     };
 }
