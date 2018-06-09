@@ -50,7 +50,7 @@ namespace gazebo {
             }
         }
 
-        pid = common::PID(0.0001, 0, 0.0001);
+        pid = common::PID(0.0005, 0, 0.001);
         // get all the joints by name and activate PID controllers
         for(physics::JointPtr j:model->GetJoints() ) {
             joint[j->GetName()] = j;
