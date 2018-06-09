@@ -2,3 +2,4 @@ build/
 devel/
 .idea
 cmake-build-debug
+.catkin_workspace

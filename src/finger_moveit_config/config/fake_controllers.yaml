@@ -1,0 +1,6 @@
+controller_list:
+  - name: fake_finger_controller
+    joints:
+      - NewFingerTest__joint01
+      - NewFingerTest__joint12
+      - NewFingerTest__joint23

@@ -28,25 +28,28 @@ namespace gazebo
     public:
         virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf);
         /// \brief Handle an incoming message from ROS
-        /// \param[in] _msg A float value that is used to set the velocity
-        /// of the Velodyne.
-        void OnRosMsg(const std_msgs::Float32ConstPtr &_msg);
+        /// \param[in] _msg A float value that is used to set the position
+        /// of the Roboy Hand.
+        void OnRosMsg(const roboy_communication_middleware::FingerCommandConstPtr &_msg);
 
-            // \brief Set the velocity of the Velodyne
-            /// \param[in] _vel New target velocity
-        void SetPosition(const double &_pos);
+            // \brief Set the position of the Roboy Hand
+            /// \param[in] _vel New target Positon
+        void SetPosition(const physics::JointPtr joint,const double &_pos);
 
     void OnUpdate(const common::UpdateInfo & /*_info*/);
 
     private:
-        /// \brief Pointer to the model.
+        /// \brief Pointer to the model.s
         physics::ModelPtr model;
 
         /// \brief Pointer to the joint.
-        physics::JointPtr joint;
+        physics::JointPtr joint0;
 
+        physics::JointPtr joint1;
+
+        physics::JointPtr joint2;
         /// \brief A PID controller for the joint.
-        common::PID pid;
+        common::PID pid;       
         // Pointer to the update event connection
         event::ConnectionPtr updateConnection;
         /// \brief A node used for transport
