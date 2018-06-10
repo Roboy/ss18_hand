@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(roboy_hand)
 
+set(CMAKE_CXX_STANDARD 11)
+
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/devel/lib)
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g")
 
@@ -11,12 +13,17 @@ SET(CMAKE_BUILD_TYPE Debug)
 #==============================================================================
 find_package(catkin REQUIRED COMPONENTS
 	roscpp
+	rospy
 	rosbag
 	controller_manager
 	gazebo_ros_control
 	std_msgs
+	genmsg
 	geometry_msgs
 	roboy_communication_middleware
+	message_generation
+	sensor_msgs
+	visualization_msgs
 )
 
 find_package(gazebo REQUIRED)
@@ -35,6 +42,9 @@ add_service_files(
 generate_messages(
   DEPENDENCIES
   std_msgs
+	geometry_msgs
+	sensor_msgs
+	visualization_msgs
 )
 
 catkin_package( DEPENDS GAZEBO CATKIN_DEPENDS rosbag message_runtime message_generation roboy_communication_middleware
@@ -74,5 +84,8 @@ add_executable(gesture_mimic_server src/gesture_mimic_server.cpp)
 target_link_libraries(gesture_mimic_server ${catkin_LIBRARIES})
 add_dependencies(gesture_mimic_server roboy_hand_gencpp)
 
+add_executable(LM_joint_calculate src/jointAngleCalculation.cpp)
+target_link_libraries(LM_joint_calculate ${catkin_LIBRARIES})
+add_dependencies(LM_joint_calculate roboy_hand_gencpp)
 
 
