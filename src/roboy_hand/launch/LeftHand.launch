@@ -5,7 +5,7 @@
     <arg name="use_sim_time" default="false"/>
     <arg name="gui" default="true"/>
     <arg name="headless" default="false"/>
-    <arg name="debug" default="false"/>
+    <arg name="debug" default="true"/>
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="debug" value="$(arg debug)"/>
@@ -29,5 +29,7 @@
                 -x $(arg x) -y $(arg y) -z $(arg z)
                 -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"
     />
+
+    <node name="joint_calculate" pkg="roboy_hand" type="LM_joint_calculate" />
 
 </launch>

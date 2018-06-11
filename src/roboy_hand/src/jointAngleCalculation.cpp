@@ -11,14 +11,15 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 #define VARIABLE_TYPE double
+#include <roboy_communication_middleware/FingerCommand.h>
 
-
+ros::Publisher pub;
 
 double jointAngleCalculation(geometry_msgs::Vector3 p1, geometry_msgs::Vector3 p2){
   double dot_product = p1.x * p2.x + p1.y * p2.y + p1.z * p2.z;
   double magnitude = sqrt((p1.x*p1.x + p1.y * p1.y + p1.z * p1.z) * (p2.x*p2.x + p2.y * p2.y + p2.z * p2.z));
   double arccos = acos(dot_product/magnitude);
-  double angle = - arccos * 180 / M_PI;
+  double angle = arccos * 180 / M_PI;
   return angle;
 }
 
@@ -106,32 +107,106 @@ void jointAngleTransform(const leap_motion::leaprosConstPtr& msg){
 	for(int i=0;i<5;i++){
 	    if(i==0){
 	        allAngles[i][2]=jointAngleCalculation(fingerVectors[i][2], fingerVectors[i][3]);
+			if(allAngles[i][2]>109)
+				allAngles[i][2]=109;
+			if(allAngles[i][2]<0)
+				allAngles[i][2]=0;
+
             double r = sqrt(fingerVectors[i][1].x*fingerVectors[i][2].x + fingerVectors[i][2].y*fingerVectors[i][2].y
                             + fingerVectors[i][2].z*fingerVectors[i][2].z);
             double theta = acos(fingerVectors[i][2].z/r);
             double phi = atan(fingerVectors[i][2].y/fingerVectors[i][2].x);
-            allAngles[i][1] = -(90 - theta * 180 / M_PI);
-            allAngles[i][0] = phi * 180 / M_PI;
+
+            allAngles[i][0] = (90 - theta * 180 / M_PI);
+            if(allAngles[i][0]>17)
+				allAngles[i][0]=17;
+            if(allAngles[i][0]<-17)
+				allAngles[i][0]=-17;
+
+            allAngles[i][1] = phi * 180 / M_PI;
+			if(allAngles[i][1]>69)
+				allAngles[i][1]=69;
+			if(allAngles[i][1]<-19)
+				allAngles[i][1]=-19;
 	    }
 	    else{
             for(int j=2;j<4;j++){
                 allAngles[i][j] = jointAngleCalculation(fingerVectors[i][j-1], fingerVectors[i][j]);
             }
+			//if(allAngles[i][2]>109)
+			//	allAngles[i][2]=109;
+			//if(allAngles[i][2]<0)
+			//	allAngles[i][2]=0;
+
+			//if(allAngles[i][3]>69)
+			//	allAngles[i][3]=69;
+			//if(allAngles[i][3]<0)
+			//	allAngles[i][3]=0;
 
             double r = sqrt(fingerVectors[i][1].x*fingerVectors[i][1].x + fingerVectors[i][1].y*fingerVectors[i][1].y
                             + fingerVectors[i][1].z*fingerVectors[i][1].z);
             double theta = acos(fingerVectors[i][1].z/r);
             double phi = atan(fingerVectors[i][1].y/fingerVectors[i][1].x);
 
-            allAngles[i][1] = -(90 - theta * 180 / M_PI);
-            allAngles[i][0] = phi * 180 / M_PI;
+			allAngles[i][0] = -(90 - theta * 180 / M_PI);
+			//if(allAngles[i][0]>17)
+			//	allAngles[i][0]=17;
+			//if(allAngles[i][0]<-17)
+			//	allAngles[i][0]=-17;
+
+			allAngles[i][1] = -phi * 180 / M_PI;
+			//if(allAngles[i][1]>69)
+			//	allAngles[i][1]=69;
+			//if(allAngles[i][1]<-19)
+			//	allAngles[i][1]=-19;
 
 	    }
 
 	}
-	printf("%lf %lf %lf\n",allAngles[0][0],allAngles[0][1],allAngles[0][2]);
-    //printf("%lf %lf %lf %lf\n",allAngles[1][0],allAngles[1][1],allAngles[1][2],allAngles[1][3]);
+	//printf("%lf %lf %lf\n",allAngles[0][0],allAngles[0][1],allAngles[0][2]);
+    printf("%lf %lf %lf %lf\n",allAngles[1][0],allAngles[1][1],allAngles[1][2],allAngles[1][3]);
 	//printf("%lf %lf %lf\n",msg->pinky_metacarpal.x,msg->pinky_metacarpal.y,msg->pinky_metacarpal.z);
+	roboy_communication_middleware::FingerCommand msg2;
+
+	msg2.finger =0;
+	msg2.angles.push_back(allAngles[0][0]);
+	msg2.angles.push_back(allAngles[0][1]);
+	msg2.angles.push_back(allAngles[0][2]);
+	msg2.angles.push_back(0);
+	pub.publish(msg2);
+
+	msg2.angles.clear();
+	msg2.finger =1;
+	msg2.angles.push_back(allAngles[1][0]);
+	msg2.angles.push_back(allAngles[1][1]);
+	msg2.angles.push_back(allAngles[1][2]);
+	msg2.angles.push_back(allAngles[1][3]);
+	pub.publish(msg2);
+
+	msg2.finger= 2;
+	msg2.angles.clear();
+	msg2.angles.push_back(allAngles[2][0]);
+	msg2.angles.push_back(allAngles[2][1]);
+	msg2.angles.push_back(allAngles[2][2]);
+	msg2.angles.push_back(allAngles[2][3]);
+	pub.publish(msg2);
+
+	msg2.finger= 3;
+	msg2.angles.clear();
+	msg2.angles.push_back(allAngles[3][0]);
+	msg2.angles.push_back(allAngles[3][1]);
+	msg2.angles.push_back(allAngles[3][2]);
+	msg2.angles.push_back(allAngles[3][3]);
+	pub.publish(msg2);
+
+	msg2.finger= 4;
+	msg2.angles.clear();
+	msg2.angles.push_back(allAngles[4][0]);
+	msg2.angles.push_back(allAngles[4][1]);
+	msg2.angles.push_back(allAngles[4][2]);
+	msg2.angles.push_back(allAngles[4][3]);
+	pub.publish(msg2);
+
 }
 
 int main(int argc, char** argv){
@@ -139,8 +214,7 @@ int main(int argc, char** argv){
 	ros::NodeHandle n;
 
 	ros::Subscriber sub = n.subscribe("/leapmotion/data",1000,jointAngleTransform);
-
-
+	pub = n.advertise<roboy_communication_middleware::FingerCommand>("/roboy/middleware/FingerCommand",1);
 
 	ros::spin();
 }
