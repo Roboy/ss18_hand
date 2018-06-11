@@ -104,19 +104,33 @@ void jointAngleTransform(const leap_motion::leaprosConstPtr& msg){
 	//printf("%lf %lf %lf\n",fingerVectors[1][0].x,fingerVectors[1][0].y,fingerVectors[1][0].z);
 
 	for(int i=0;i<5;i++){
-		for(int j=2;j<4;j++){
-			allAngles[i][j] = jointAngleCalculation(fingerVectors[i][j-1], fingerVectors[i][j]);
-		}
+	    if(i==0){
+	        allAngles[i][2]=jointAngleCalculation(fingerVectors[i][2], fingerVectors[i][3]);
+            double r = sqrt(fingerVectors[i][1].x*fingerVectors[i][2].x + fingerVectors[i][2].y*fingerVectors[i][2].y
+                            + fingerVectors[i][2].z*fingerVectors[i][2].z);
+            double theta = acos(fingerVectors[i][2].z/r);
+            double phi = atan(fingerVectors[i][2].y/fingerVectors[i][2].x);
+            allAngles[i][1] = -(90 - theta * 180 / M_PI);
+            allAngles[i][0] = phi * 180 / M_PI;
+	    }
+	    else{
+            for(int j=2;j<4;j++){
+                allAngles[i][j] = jointAngleCalculation(fingerVectors[i][j-1], fingerVectors[i][j]);
+            }
 
-		double r = sqrt(fingerVectors[i][1].x*fingerVectors[i][1].x + fingerVectors[i][1].y*fingerVectors[i][1].y
-				+ fingerVectors[i][1].z*fingerVectors[i][1].z);
-		double theta = acos(fingerVectors[i][1].z/r);
-		double phi = atan(fingerVectors[i][1].y/fingerVectors[i][1].x);
+            double r = sqrt(fingerVectors[i][1].x*fingerVectors[i][1].x + fingerVectors[i][1].y*fingerVectors[i][1].y
+                            + fingerVectors[i][1].z*fingerVectors[i][1].z);
+            double theta = acos(fingerVectors[i][1].z/r);
+            double phi = atan(fingerVectors[i][1].y/fingerVectors[i][1].x);
 
-		allAngles[i][1] = -(90 - theta * 180 / M_PI);
-		allAngles[i][0] = phi * 180 / M_PI;
+            allAngles[i][1] = -(90 - theta * 180 / M_PI);
+            allAngles[i][0] = phi * 180 / M_PI;
+
+	    }
+
 	}
-	printf("%lf %lf %lf %lf\n",allAngles[1][0],allAngles[1][1],allAngles[1][2],allAngles[1][3]);
+	printf("%lf %lf %lf\n",allAngles[0][0],allAngles[0][1],allAngles[0][2]);
+    //printf("%lf %lf %lf %lf\n",allAngles[1][0],allAngles[1][1],allAngles[1][2],allAngles[1][3]);
 	//printf("%lf %lf %lf\n",msg->pinky_metacarpal.x,msg->pinky_metacarpal.y,msg->pinky_metacarpal.z);
 }
 
