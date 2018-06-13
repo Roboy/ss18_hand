@@ -80,16 +80,21 @@ namespace gazebo {
         ROS_INFO("Finger plugin ready");
     }
 
-    void FingerPlugin::OnRosMsg(const roboy_communication_middleware::FingerCommandConstPtr &msg) {
-        ROS_INFO("finger %d, hand %d", msg->finger, msg->id);
+    void FingerPlugin::OnRosMsg(const roboy_communication_middleware::HandSimCommandConstPtr &msg) {
+        //ROS_INFO("finger %d, hand %d", msg->finger, msg->id);
+
         vector<double> radian;
-        for(auto degree:msg->angles){
-            radian.push_back(degreesToRadians(degree));
+        for(auto &msg_finger:msg->fingerMsg){
+            for(auto degree:msg_finger.angles){
+                radian.push_back(degreesToRadians(degree));
+            }
         }
-        for(int i=0;i<radian.size();i++){
-            char joint_name[100];
-            sprintf(joint_name,"%s%d",finger_names[msg->finger].c_str(),i);
-            model->GetJointController()->SetPositionTarget( joint[joint_name]->GetScopedName(), radian[i]);
+        for(auto &msg_finger:msg->fingerMsg){
+            for(int i=0; i< 4;i++){
+                char joint_name[100];
+                sprintf(joint_name,"%s%d",finger_names[msg_finger.finger].c_str(),i);
+                model->GetJointController()->SetPositionTarget( joint[joint_name]->GetScopedName(), radian[i]);
+            }
         }
     }
 

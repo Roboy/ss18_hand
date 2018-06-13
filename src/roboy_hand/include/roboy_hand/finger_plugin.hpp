@@ -10,6 +10,7 @@
 #include <gazebo/transport/transport.hh>
 #include <gazebo/msgs/msgs.hh>
 #include <roboy_communication_middleware/FingerCommand.h>
+#include <roboy_communication_middleware/HandSimCommand.h>
 #include <map>
 #include <common_utilities/CommonDefinitions.h>
 
@@ -36,7 +37,7 @@ namespace gazebo
         /// \brief Handle an incoming message from ROS
         /// \param[in] _msg A float value that is used to set the position
         /// of the Roboy Hand.
-        void OnRosMsg(const roboy_communication_middleware::FingerCommandConstPtr &_msg);
+        void OnRosMsg(const roboy_communication_middleware::HandSimCommandConstPtr &_msg);
 
 
     void OnUpdate(const common::UpdateInfo & /*_info*/);

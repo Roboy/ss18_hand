@@ -34,6 +34,7 @@ add_service_files(
 
 generate_messages(
   DEPENDENCIES
+  roboy_communication_middleware
   std_msgs
 )
 
@@ -68,11 +69,14 @@ install(FILES
 
 add_executable(gesture_execution_server src/gesture_execution_server.cpp)
 target_link_libraries(gesture_execution_server ${catkin_LIBRARIES})
-add_dependencies(gesture_execution_server roboy_hand_gencpp)
+add_dependencies(gesture_execution_server roboy_communication_middleware_gencpp roboy_hand_gencpp )
+
+add_executable(gesture_execution_client src/gesture_execution_client.cpp)
+target_link_libraries(gesture_execution_client ${catkin_LIBRARIES})
+add_dependencies(gesture_execution_client roboy_hand_gencpp)
+
+
 
 add_executable(gesture_mimic_server src/gesture_mimic_server.cpp)
 target_link_libraries(gesture_mimic_server ${catkin_LIBRARIES})
 add_dependencies(gesture_mimic_server roboy_hand_gencpp)
-
-
-
