@@ -50,7 +50,7 @@ namespace gazebo {
             }
         }
 
-        pid = common::PID(0.0005, 0, 0.001);
+        pid = common::PID(0.0001, 0, 0.001);
         // get all the joints by name and activate PID controllers
         for(physics::JointPtr j:model->GetJoints() ) {
             joint[j->GetName()] = j;
@@ -67,7 +67,7 @@ namespace gazebo {
         }
 
         // Create ros node
-        nh = ros::NodeHandlePtr(new ros::NodeHandle("roboy"));
+        nh = ros::NodeHandlePtr(new ros::NodeHandle);
         spinner = boost::shared_ptr<ros::AsyncSpinner>(new ros::AsyncSpinner(1));
         spinner->start();
 
@@ -82,7 +82,6 @@ namespace gazebo {
 
     void FingerPlugin::OnRosMsg(const roboy_communication_middleware::HandSimCommandConstPtr &msg) {
         //ROS_INFO("finger %d, hand %d", msg->finger, msg->id);
-
         vector<double> radian;
         for(auto &msg_finger:msg->fingerMsg){
             for(auto degree:msg_finger.angles){
