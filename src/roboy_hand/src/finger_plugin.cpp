@@ -82,17 +82,21 @@ namespace gazebo {
 
     void FingerPlugin::OnRosMsg(const roboy_communication_middleware::HandSimCommandConstPtr &msg) {
         //ROS_INFO("finger %d, hand %d", msg->finger, msg->id);
-        vector<double> radian;
+        vector<vector<double>> hand_radian;
+        vector<double> finger_radian;
         for(auto &msg_finger:msg->fingerMsg){
+            while(!finger_radian.empty()) finger_radian.pop_back();
             for(auto degree:msg_finger.angles){
-                radian.push_back(degreesToRadians(degree));
+                finger_radian.push_back(degreesToRadians(degree));
             }
+            if(finger_radian.size() != 0) hand_command[msg_finger.finger] = finger_radian;
         }
+
         for(auto &msg_finger:msg->fingerMsg){
-            for(int i=0; i< 4;i++){
+            for(int i=0; i< 4;i++){                                                      //Every finger has 4 joint therefore looping over them.
                 char joint_name[100];
-                sprintf(joint_name,"%s%d",finger_names[msg_finger.finger].c_str(),i);
-                model->GetJointController()->SetPositionTarget( joint[joint_name]->GetScopedName(), radian[i]);
+                sprintf(joint_name,"%s%d",finger_names[msg_finger.finger].c_str(),i);   //Get thumb0 or index0 a particular joint name in joint_name.
+                model->GetJointController()->SetPositionTarget( joint[joint_name]->GetScopedName(), hand_command[msg_finger.finger][i]); //Control thumb0 with radian[i]
             }
         }
     }

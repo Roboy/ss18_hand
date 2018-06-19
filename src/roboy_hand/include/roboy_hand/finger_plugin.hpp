@@ -48,6 +48,8 @@ namespace gazebo
 
         /// \brief Pointer to the joint.
         map<string,physics::JointPtr> joint;
+
+        map<int,vector<double>> hand_command;
         /// \brief A PID controller for the joint.
         common::PID pid;       
         // Pointer to the update event connection
