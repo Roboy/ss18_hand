@@ -4,3 +4,6 @@
 [submodule "src/roboy_models"]
 	path = src/roboy_models
 	url = https://github.com/Roboy/roboy_models
+[submodule "src/leap_motion"]
+	path = src/leap_motion
+	url = https://github.com/ros-drivers/leap_motion.git
