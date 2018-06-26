@@ -7,3 +7,6 @@
 [submodule "src/leap_motion"]
 	path = src/leap_motion
 	url = https://github.com/ros-drivers/leap_motion.git
+[submodule "src/roboy_simulation"]
+	path = src/roboy_simulation
+	url = https://github.com/letrend/roboy_simulation

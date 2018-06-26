@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: roboy_models
+    relative_path: roboy_2_0_left_arm_elbow/model.urdf
+  SRDF:
+    relative_path: config/roboy_2_0_left_arm_elbow.srdf
+  CONFIG:
+    author_name: AK
+    author_email: unicorn@roboy.org
+    generated_timestamp: 1529683521
