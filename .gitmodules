@@ -10,3 +10,6 @@
 [submodule "src/roboy_simulation"]
 	path = src/roboy_simulation
 	url = https://github.com/letrend/roboy_simulation
+[submodule "src/common_utilities"]
+	path = src/common_utilities
+	url = https://github.com/Roboy/common_utilities.git
