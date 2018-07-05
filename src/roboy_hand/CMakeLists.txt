@@ -85,9 +85,9 @@ add_executable(gesture_execution_client src/gesture_execution_client.cpp)
 target_link_libraries(gesture_execution_client ${catkin_LIBRARIES})
 add_dependencies(gesture_execution_client roboy_hand_gencpp)
 
-#add_executable(LM_joint_calculate src/jointAngleCalculation.cpp)
-#target_link_libraries(LM_joint_calculate ${catkin_LIBRARIES})
-#add_dependencies(LM_joint_calculate roboy_hand_gencpp)
+add_executable(LM_joint_calculate src/jointAngleCalculation.cpp)
+target_link_libraries(LM_joint_calculate ${catkin_LIBRARIES})
+add_dependencies(LM_joint_calculate roboy_hand_gencpp)
 
 
 add_executable(gesture_mimic_server src/gesture_mimic_server.cpp)
