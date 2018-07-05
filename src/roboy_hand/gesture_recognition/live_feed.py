@@ -2,7 +2,7 @@ import cv2
 
 
 def show_webcam(mirror=False):
-    cam = cv2.VideoCapture(1)
+    cam = cv2.VideoCapture(0)
     while True:
         ret_val, img = cam.read()
         if mirror: 
