@@ -43,7 +43,8 @@ leap_[rgb|depth]_train_[Model Architecture][_preprocessed]?
 ```
 * [rgb|depth] indicates whether training images are RGB or depth images.
 * [Model Architecture] should be one of the architecture in **models** folder (e.g. vgg, resnet).
-* [_preprocessed] is an optional tag. If there is preprocessed tag, it means that every image is horizontally mirrorred and all the dataset is normalized by the following formula. 
+* [_preprocessed] is an optional tag. If there is preprocessed tag, it means that every image is horizontally mirrorred and all the dataset is normalized by the following formula.
+
 ![equation](https://latex.codecogs.com/gif.latex?X_{new}&space;=&space;\frac{X_{old}-\mu}{\sigma}\newline&space;\mu:\text{Mean&space;value&space;of&space;the&space;dataset.}\newline&space;\sigma:\text{Standard&space;deviation&space;of&space;the&space;dataset.})
 
 When your the script finishes training it will save the trained model under **saved_models** folder with the following naming scheme:
