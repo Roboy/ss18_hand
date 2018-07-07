@@ -1,5 +1,5 @@
 # Roboy_Hand
-Control roboy's hand model to do gestures
+Simulation and control of roboy's hand model and gesture recognition
 
 ### YOU CAN:
   - control the hand model by directly publishing joints angles to rostopic
