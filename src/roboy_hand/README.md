@@ -19,8 +19,6 @@ $ git submodule update
 #### install Leap Motion SDK
 install the version for Linux: https://developer.leapmotion.com/sdk/v2
 
-#### Other Dependencies:
-
 ## Build the project
 ```sh
 $ cd /path/to/ss18_hand
