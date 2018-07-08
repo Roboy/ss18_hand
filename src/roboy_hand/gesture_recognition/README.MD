@@ -23,6 +23,10 @@ https://pytorch.org/
 
 ### How to setup
 
+### Warning
+- The notebooks which trains LeNet (`leap_train_depth` and `leap_rgb_train` files) are a little old. You may need to tweak dataset path to run these files.
+- `data_utils.py` contains preprocessing methods.
+
 ##### 1. Download the dataset
 Go to [Hand Gesture Dataset website](http://lttm.dei.unipd.it/downloads/gesture/#kinect_leap) and download the Microsoft Kinect and Leap Motion Dataset or [click here.](http://lttm.dei.unipd.it/downloads/gesture/kinect_leap/data/kinect_leap_dataset.zip)
 ##### 2. Extract it to same folder which has training scripts.
