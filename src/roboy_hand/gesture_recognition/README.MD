@@ -1,19 +1,20 @@
 # Gesture Recognition
-Roboy wishes to understand the gestures.
+Roboy wishes to understand the gestures. In order to do that Roboy needs to figure out the meaning of a gesture.
 
 
 ## About
-This repository consists the scripts for training different architectures.
-
+This repository consists the scripts for training different architectures to help Roboy understand the meaning of gestures. The dataset contains 10 different gestures. We achieved %85 accuracy using different models.
+You can find detailed version of research and implementation in [here](https://devanthro.atlassian.net/wiki/spaces/SS18/pages/280952998/Gesture+Recognition).
 
 ## Getting Started
 ### Prequisites
-The scripts are written in Jupyter Notebook. I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 3.
+The scripts are written in Jupyter Notebook and Python 3.6. I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 3.6.
 
 First install required packages.
-* `pip3 install numpy=1.14.5`
-* `pip3 install scikit-image=0.13.0`
-* `pip3 install scikit-learn=0.19.1`
+* `pip3 install numpy==1.14.5`
+* `pip3 install scikit-image==0.13.0`
+* `pip3 install scikit-learn==0.19.1`
+* `pip3 install opencv-contrib-python`
 
 You also need Jupyter Notebook. Follow the installing instructions from here: http://jupyter.readthedocs.io/en/latest/install.html
 
