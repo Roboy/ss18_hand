@@ -55,7 +55,9 @@ $ rosrun leap_motion sender.py
 $ rostopic echo /roboy/middleware/FingerCommand 
 ```
 
-
+# Further Info
+For more info on the project visit our Confluence Page:
+https://devanthro.atlassian.net/wiki/spaces/SS18/pages/235601936/Hand
 
    [gesture_recognition]: <https://github.com/Roboy/ss18_hand/tree/devel/src/roboy_hand/gesture_recognition>
    [ROS Kinetic]: <http://wiki.ros.org/kinetic/Installation>
