@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: roboy_models
+    relative_path: roboy_hand_left/model.urdf
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/roboy_hand_left.srdf
+  CONFIG:
+    author_name: Simon Trendel
+    author_email: simon.trendel@tum.de
+    generated_timestamp: 1531493405
