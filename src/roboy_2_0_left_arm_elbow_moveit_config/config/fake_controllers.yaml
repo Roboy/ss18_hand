@@ -1,7 +1,0 @@
-controller_list:
-  - name: fake_lower_arm_left_controller
-    joints:
-      - shoulder_left_axis_1
-      - shoulder_left_axis_2
-      - shoulder_left_axis_3
-      - elbow_left

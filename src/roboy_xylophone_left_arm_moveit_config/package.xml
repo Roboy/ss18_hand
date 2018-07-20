@@ -1,12 +1,12 @@
 <package>
 
-  <name>roboy_2_0_left_arm_elbow_moveit_config</name>
+  <name>roboy_xylophone_left_arm_moveit_config</name>
   <version>0.3.0</version>
   <description>
-     An automatically generated package with all the configuration and launch files for using the roboy_2_0_left_arm_elbow with the MoveIt! Motion Planning Framework
+     An automatically generated package with all the configuration and launch files for using the roboy_xylophone_left_arm with the MoveIt! Motion Planning Framework
   </description>
-  <author email="unicorn@roboy.org">AK</author>
-  <maintainer email="unicorn@roboy.org">AK</maintainer>
+  <author email="simon.trendel@tum.de">Simon Trendel</author>
+  <maintainer email="simon.trendel@tum.de">Simon Trendel</maintainer>
 
   <license>BSD</license>
 

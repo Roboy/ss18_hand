@@ -1,0 +1,9 @@
+controller_list:
+  - name: fake_hand_left_controller
+    joints:
+      - base_joint
+      - sphere_axis0
+      - sphere_axis1
+      - sphere_axis2
+      - elbow_left
+      - wrist_left

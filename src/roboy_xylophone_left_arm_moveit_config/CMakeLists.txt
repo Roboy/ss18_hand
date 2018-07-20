@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(roboy_2_0_left_arm_elbow_moveit_config)
+project(roboy_xylophone_left_arm_moveit_config)
 
 find_package(catkin REQUIRED)
 
