@@ -31,7 +31,7 @@ bool execute(roboy_hand::GestureExecution::Request &req,
     }
 
     for (int i=0; i<5; i++){
-        fscanf(lut,"%lf %lf %lf %lf\n", &joints[i][0],  &joints[i][1],  &joints[i][2], &joints[i][3]);
+        fscanf(lut,"%f %f %f %f\n", &joints[i][0],  &joints[i][1],  &joints[i][2], &joints[i][3]);
         msg_finger.angles.clear();
         msg_finger.id = 0;
         msg_finger.finger = i;
@@ -44,7 +44,7 @@ bool execute(roboy_hand::GestureExecution::Request &req,
     }
 
 	//msg_hand = msg_finger_vector;
-	res.msg = msg_hand;
+  res.msg = msg_hand;
 	return true;
 	
 }
