@@ -10,6 +10,10 @@
 #include <roboy_communication_middleware/FingerCommand.h>
 #include <roboy_communication_middleware/HandSimCommand.h>
 
+#include <iostream>
+#include <fstream>
+using namespace std;
+
 bool execute(roboy_hand::GestureExecution::Request &req,
 			 roboy_hand::GestureExecution::Response &res)
 {
@@ -17,37 +21,32 @@ bool execute(roboy_hand::GestureExecution::Request &req,
 	roboy_communication_middleware::FingerCommand msg_finger;
     std::vector<roboy_communication_middleware::FingerCommand> msg_finger_vector;
     roboy_communication_middleware::HandSimCommand msg_hand;
-	for(int i=0; i < 5 ; i++){
-        while(!msg_finger.angles.empty()) msg_finger.angles.pop_back();
-		if(i != 2){
-			msg_finger.id = 0;
-			msg_finger.finger = i;
-			//msg_finger.angles.erase(msg_finger.angles.begin(),msg_finger.angles.begin()+4);
-			msg_finger.angles.push_back(-20);
-			msg_finger.angles.push_back(0);
-			msg_finger.angles.push_back(109);
-			msg_finger.angles.push_back(69);
 
-			msg_hand.fingerMsg.push_back(msg_finger);
-		}
-		else{
-            //while(!msg_finger.angles.empty) msg_finger.angles.pop_back();
-		    //msg_finger.angles.erase(msg_finger.angles.begin(),msg_finger.angles.begin()+4);
-			msg_finger.id = 0;
-			msg_finger.finger = i;
-			msg_finger.angles.push_back(0);
-			msg_finger.angles.push_back(0);
-			msg_finger.angles.push_back(0);
-			msg_finger.angles.push_back(0);
+    FILE *lut;
+    lut = fopen ("ges_lut.txt", "rt+");
+    float joints[5][4];
 
-            msg_hand.fingerMsg.push_back(msg_finger);
-		}
-	}
+    for(int i=0; i<req.gesture*6+1; i++){
+        fscanf(lut, "%*[^\n]%*c");
+    }
+
+    for (int i=0; i<5; i++){
+        fscanf(lut,"%lf %lf %lf %lf\n", &joints[i][0],  &joints[i][1],  &joints[i][2], &joints[i][3]);
+        msg_finger.angles.clear();
+        msg_finger.id = 0;
+        msg_finger.finger = i;
+        msg_finger.angles.push_back(joints[i][0]);
+        msg_finger.angles.push_back(joints[i][1]);
+        msg_finger.angles.push_back(joints[i][2]);
+        msg_finger.angles.push_back(joints[i][3]);
+
+        msg_hand.fingerMsg.push_back(msg_finger);
+    }
+
 	//msg_hand = msg_finger_vector;
 	res.msg = msg_hand;
 	return true;
-
-
+	
 }
 
 int main(int argc, char **argv)

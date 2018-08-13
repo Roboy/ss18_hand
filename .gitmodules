@@ -16,3 +16,6 @@
 [submodule "src/roboy_moveit_configs"]
 	path = src/roboy_moveit_configs
 	url = https://github.com/Roboy/roboy_moveit_configs
+[submodule "src/roboy_controller"]
+	path = src/roboy_controller
+	url = https://github.com/Roboy/roboy_controller
