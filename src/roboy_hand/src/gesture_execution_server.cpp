@@ -33,7 +33,7 @@ bool execute(roboy_hand::GestureExecution::Request &req,
 
     if (!getcwd(cCurrentPath, sizeof(cCurrentPath)))
     {
-        return errno;
+        ROS_ERROR("Couldnt get folder name!");
     }
 
     string file_name(cCurrentPath);
@@ -45,6 +45,16 @@ bool execute(roboy_hand::GestureExecution::Request &req,
     if(!lut.is_open()) ROS_ERROR("FILE NOT FOUND!");
     int ges_index;
     float joints[5][4] = {0};
+/*
+    int index;
+    lut >> index;
+    cout << index << endl;
+    for(int i=0; i<5; i++){
+        lut >> joints[i][0] >> joints[i][1] >> joints[i][2] >> joints[i][3];
+        cout << joints[i][0] << " " << joints[i][1] << " " << joints[i][2] << " " << joints[i][3] << endl;
+    }
+*/
+    //cout << req.gesture << endl;
 
     for(int i=0; i<req.gesture; i++){
         lut >> ges_index;
