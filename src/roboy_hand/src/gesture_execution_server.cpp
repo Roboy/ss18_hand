@@ -9,6 +9,11 @@
 #include "roboy_hand/GestureExecution.h"
 #include <roboy_communication_middleware/FingerCommand.h>
 #include <roboy_communication_middleware/HandSimCommand.h>
+#include <stdio.h>  /* defines FILENAME_MAX */
+#include <unistd.h>
+
+#include <stdio.h>  /* defines FILENAME_MAX */
+#include <unistd.h>
 
 
 #include <iostream>
@@ -24,21 +29,22 @@ bool execute(roboy_hand::GestureExecution::Request &req,
     roboy_communication_middleware::HandSimCommand msg_hand;
 
     ifstream lut;
-    lut.open("/home/barisyazici/Desktop/ss18_hand/src/roboy_hand/src/ges_lut.txt");
+    char cCurrentPath[FILENAME_MAX];
+
+    if (!getcwd(cCurrentPath, sizeof(cCurrentPath)))
+    {
+        return errno;
+    }
+
+    string file_name(cCurrentPath);
+    file_name += "/src/roboy_hand/src/ges_lut.txt";
+    cout << file_name << endl;
+    //printf ("The current working directory is %s", cCurrentPath);
+    lut.open(file_name);
 
     if(!lut.is_open()) ROS_ERROR("FILE NOT FOUND!");
     int ges_index;
-    double joints[5][4] = {0};
-/*
-    int index;
-    lut >> index;
-    cout << index << endl;
-    for(int i=0; i<5; i++){
-        lut >> joints[i][0] >> joints[i][1] >> joints[i][2] >> joints[i][3];
-        cout << joints[i][0] << " " << joints[i][1] << " " << joints[i][2] << " " << joints[i][3] << endl;
-    }
-*/
-    cout << req.gesture << endl;
+    float joints[5][4] = {0};
 
     for(int i=0; i<req.gesture; i++){
         lut >> ges_index;
@@ -51,7 +57,7 @@ bool execute(roboy_hand::GestureExecution::Request &req,
 
 
     lut >> ges_index;
-    cout<<ges_index<<endl;
+    cout << "gesture: " << ges_index << endl;
 
     if (!msg_hand.fingerMsg.empty()) msg_hand.fingerMsg.clear();
 
