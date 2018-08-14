@@ -9,6 +9,11 @@
 #include "roboy_hand/GestureExecution.h"
 #include <roboy_communication_middleware/FingerCommand.h>
 #include <roboy_communication_middleware/HandSimCommand.h>
+#include <stdio.h>  /* defines FILENAME_MAX */
+#include <unistd.h>
+
+#include <stdio.h>  /* defines FILENAME_MAX */
+#include <unistd.h>
 
 
 #include <iostream>
@@ -24,11 +29,40 @@ bool execute(roboy_hand::GestureExecution::Request &req,
     roboy_communication_middleware::HandSimCommand msg_hand;
 
     ifstream lut;
-    lut.open("/home/kaiwu/ss18_hand/src/roboy_hand/src/ges_lut.txt");
+
+    char cCurrentPath[FILENAME_MAX];
+
+    if (!getcwd(cCurrentPath, sizeof(cCurrentPath)))
+    {
+<<<<<<< HEAD
+        return errno;
+    }
+
+    string file_name(cCurrentPath);
+    file_name += "/src/roboy_hand/src/ges_lut.txt";
+    cout << file_name << endl;
+    //printf ("The current working directory is %s", cCurrentPath);
+    lut.open(file_name);
+    //lut.open("/home/kaiwu/ss18_hand/src/roboy_hand/src/ges_lut.txt");
+=======
+        ROS_ERROR("Couldnt get folder name!")
+    }
+
+    cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; /* not really required */
+
+
+
+    string file_name(cCurrentPath);
+    file_name += "/src/roboy_hand/src";
+    //ROS_INFO ("LUT path is %s", file_name);
+
+    //lut.open("/home/kaiwu/ss18_hand/src/roboy_hand/src/ges_lut.txt");
+    lut.open(file_name);
+>>>>>>> devel
 
     if(!lut.is_open()) ROS_ERROR("FILE NOT FOUND!");
     int ges_index;
-    double joints[5][4] = {0};
+    float joints[5][4] = {0};
 /*
     int index;
     lut >> index;
@@ -38,7 +72,7 @@ bool execute(roboy_hand::GestureExecution::Request &req,
         cout << joints[i][0] << " " << joints[i][1] << " " << joints[i][2] << " " << joints[i][3] << endl;
     }
 */
-    cout << req.gesture << endl;
+    //cout << req.gesture << endl;
 
     for(int i=0; i<req.gesture; i++){
         lut >> ges_index;
@@ -51,7 +85,7 @@ bool execute(roboy_hand::GestureExecution::Request &req,
 
 
     lut >> ges_index;
-    cout<<ges_index<<endl;
+    cout << "gesture: " << ges_index << endl;
 
     if (!msg_hand.fingerMsg.empty()) msg_hand.fingerMsg.clear();
 
