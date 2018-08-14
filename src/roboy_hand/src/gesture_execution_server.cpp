@@ -9,6 +9,8 @@
 #include "roboy_hand/GestureExecution.h"
 #include <roboy_communication_middleware/FingerCommand.h>
 #include <roboy_communication_middleware/HandSimCommand.h>
+#include <stdio.h>  /* defines FILENAME_MAX */
+#include <unistd.h>
 
 
 #include <iostream>
@@ -24,7 +26,24 @@ bool execute(roboy_hand::GestureExecution::Request &req,
     roboy_communication_middleware::HandSimCommand msg_hand;
 
     ifstream lut;
-    lut.open("/home/kaiwu/ss18_hand/src/roboy_hand/src/ges_lut.txt");
+
+    char cCurrentPath[FILENAME_MAX];
+
+    if (!getcwd(cCurrentPath, sizeof(cCurrentPath)))
+    {
+        ROS_ERROR("Couldnt get folder name!")
+    }
+
+    cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; /* not really required */
+
+
+
+    string file_name(cCurrentPath);
+    file_name += "/src/roboy_hand/src";
+    //ROS_INFO ("LUT path is %s", file_name);
+
+    //lut.open("/home/kaiwu/ss18_hand/src/roboy_hand/src/ges_lut.txt");
+    lut.open(file_name);
 
     if(!lut.is_open()) ROS_ERROR("FILE NOT FOUND!");
     int ges_index;
