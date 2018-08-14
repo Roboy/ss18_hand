@@ -24,7 +24,7 @@ bool execute(roboy_hand::GestureExecution::Request &req,
     roboy_communication_middleware::HandSimCommand msg_hand;
 
     ifstream lut;
-    lut.open("/home/kaiwu/ss18_hand/src/roboy_hand/src/ges_lut.txt");
+    lut.open("/home/barisyazici/Desktop/ss18_hand/src/roboy_hand/src/ges_lut.txt");
 
     if(!lut.is_open()) ROS_ERROR("FILE NOT FOUND!");
     int ges_index;

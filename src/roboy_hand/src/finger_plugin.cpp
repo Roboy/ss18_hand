@@ -87,7 +87,7 @@ namespace gazebo {
         for(auto &msg_finger:msg->fingerMsg){
             while(!finger_radian.empty()) finger_radian.pop_back();
             for(auto degree:msg_finger.angles){
-                finger_radian.push_back(degreesToRadians(degree));
+                finger_radian.push_back(degree);
             }
             if(finger_radian.size() != 0) hand_command[msg_finger.finger] = finger_radian;
         }

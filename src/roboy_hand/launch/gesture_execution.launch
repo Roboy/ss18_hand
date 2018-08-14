@@ -15,25 +15,12 @@
         <arg name="headless" value="$(arg headless)"/>
     </include>
 
-    <!-- Robot pose -->
-    <arg name="x" default="0"/>
-    <arg name="y" default="0"/>
-    <arg name="z" default="0.1"/>
-    <arg name="roll" default="3.14"/>
-    <arg name="pitch" default="0"/>
-    <arg name="yaw" default="0"/>
-
     <!--spawn gazebo model with given pose-->
     <node name="sdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-          args="-sdf -file $(find roboy_models)/roboy_hand_left/model.sdf -model roboy_hand_left
-                -x $(arg x) -y $(arg y) -z $(arg z)
-                -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"
+          args="-sdf -file $(find roboy_models)/left_hand_model/model.sdf -model LeftHand"
     />
-
-    <!--<node name="joint_calculate" pkg="roboy_hand" type="LM_joint_calculate" />-->
 
     <node name="gesture_server" pkg="roboy_hand" type="gesture_execution_server" />
     <node name="gesture_client" pkg="roboy_hand" type="gesture_execution_client" />
-
 
 </launch>

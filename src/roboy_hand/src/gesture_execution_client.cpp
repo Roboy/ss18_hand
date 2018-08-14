@@ -33,19 +33,32 @@ void call_gesture_server(const std_msgs::Int64& msg){
     {
         ROS_ERROR("Failed to call service gesture execution");
     }
-    //std::vector<double> target_pos;
+    std::vector<double> target_pos1;
+    std::vector<double> target_pos2;
+    std::vector<double> target_pos3;
+    std::vector<double> target_pos4;
+    std::vector<double> target_pos5;
     //std::cout << HandMsg.fingerMsg[2].angles;
-    //for(int i=0;i<4;i++){
-    //    target_pos.push_back((double)HandMsg.fingerMsg[1].angles[i]);
-    //}
+    for (int i = 0; i < 4; i++) {
+        target_pos1.push_back((double) HandMsg.fingerMsg[0].angles[i]);
+        target_pos2.push_back((double) HandMsg.fingerMsg[1].angles[i]);
+        target_pos3.push_back((double) HandMsg.fingerMsg[2].angles[i]);
+        target_pos4.push_back((double) HandMsg.fingerMsg[3].angles[i]);
+        target_pos5.push_back((double) HandMsg.fingerMsg[4].angles[i]);
+    }
 
-    //n.setParam("/middle_limb3/target_pos",target_pos);
-    /*
-    n.setParam("/middle_limb3/target_pos",target_pos);
-    n.setParam("/middle_limb3/target_pos",target_pos);
-    n.setParam("/middle_limb3/target_pos",target_pos);
-    n.setParam("/middle_limb3/target_pos",target_pos);
-     */
+
+    //ROS_INFO("thumb limb target_pos %f, %f, %f, %f", target_pos[0][0],target_pos[0][1],target_pos[0][2],target_pos[0][3]);
+    n.setParam("/controller",1);
+
+    n.setParam("/thumb_limb3/target_pos",target_pos1);
+
+    n.setParam("/index_limb3/target_pos",target_pos2);
+    n.setParam("/middle_limb3/target_pos",target_pos3);
+    n.setParam("/ring_limb3/target_pos",target_pos4);
+    n.setParam("/little_limb3/target_pos",target_pos5);
+
+
     ges_exec.publish(HandMsg);
 
 }
@@ -66,36 +79,6 @@ int main(int argc, char **argv)
   ges_exec = nh.advertise<roboy_communication_middleware::HandSimCommand>("/roboy/middleware/FingerCommand",1);
 
   ros::spin();
-  /*
-  roboy_communication_middleware::FingerCommand msg;
-  roboy_communication_middleware::HandSimCommand HandMsg;
 
-
-
-  roboy_hand::GestureExecution srv;
-  srv.request.gesture = atoll(argv[0]);
-
-  if (client.call(srv))
-  {
-    //ROS_INFO("Hand id: %i", srv.response.msg.fingerMsg.id);
-    //ROS_INFO("Hand id: %i", srv.response.msg.fingerMsg.finger);
-    //ROS_INFO("Hand id: %i", srv.response.msg.fingerMsg.angles);
-
-    HandMsg.fingerMsg = srv.response.msg.fingerMsg;
-
-
-  }
-  else
-  {
-    ROS_ERROR("Failed to call service gesture execution");
-    return 1;
-  }
-
-  while(ros::ok() && HandMsg.fingerMsg.size() != 0)
-  {
-      ges_exec.publish(HandMsg);
-      ros::spinOnce();
-  }
-  */
   return 0;
 }
