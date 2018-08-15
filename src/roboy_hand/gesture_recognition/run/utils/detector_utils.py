@@ -21,10 +21,10 @@ sys.path.append('..')
 # FROZEN_GRAPH_PATH = '/home/bilal/handtracking/hand_inference_graph/frozen_inference_graph.pb'
 
 # Path of the exported frozen model
-FROZEN_GRAPH_PATH = '/home/bilal/hand_segmentation_each_class/frozen_inference_graph.pb'
+FROZEN_GRAPH_PATH = '../frozen_inference_graph.pb'
 
 # List of the strings that is used to add correct label for each box.
-PATH_TO_LABELS = '/home/bilal/hand_segmentation_each_class/data/hands_label_map.pbtxt'
+PATH_TO_LABELS = '../data/hands_label_map.pbtxt'
 
 # Number of classes
 NUM_CLASSES = 10
