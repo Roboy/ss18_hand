@@ -14,7 +14,7 @@
 
 #include <stdio.h>  /* defines FILENAME_MAX */
 #include <unistd.h>
-
+#include <ros/package.h>
 
 #include <iostream>
 #include <fstream>
@@ -29,15 +29,16 @@ bool execute(roboy_hand::GestureExecution::Request &req,
     roboy_communication_middleware::HandSimCommand msg_hand;
 
     ifstream lut;
+    /*
     char cCurrentPath[FILENAME_MAX];
 
     if (!getcwd(cCurrentPath, sizeof(cCurrentPath)))
     {
         ROS_ERROR("Couldnt get folder name!");
     }
-
-    string file_name(cCurrentPath);
-    file_name += "/src/roboy_hand/src/ges_lut.txt";
+    */
+    string file_name = ros::package::getPath("roboy_hand");
+    file_name += "/src/ges_lut.txt";
     cout << file_name << endl;
     //printf ("The current working directory is %s", cCurrentPath);
     lut.open(file_name);
