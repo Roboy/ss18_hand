@@ -11,9 +11,9 @@ You can find detailed version of research and implementation in [here](https://d
 I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 2.7.
 
 First install required packages.
-* `pip install Pillow==5.1.0`
-* `pip install tensorflow-gpu==1.4.1`
-* `pip install pandas==0.23.0`
+* `$ pip install Pillow==5.1.0`
+* `$ pip install tensorflow-gpu==1.4.1`
+* `$ pip install pandas==0.23.0`
 
 ## How to setup
 
@@ -27,11 +27,11 @@ Go to [Hand Gesture Dataset website](http://lttm.dei.unipd.it/downloads/gesture/
 First, extract the dataset and the labels.
 Then, run the following scripts in the following order:
 ```bash
-python get_rgb_images_from_kinect_dataset.py
-python clear_dataset.py
-python xml_to_csv.py
-generate_train_tfrecord.py
-generate_test_tfrecord.py
+$ python get_rgb_images_from_kinect_dataset.py
+$ python clear_dataset.py
+$ python xml_to_csv.py
+$ python generate_train_tfrecord.py
+$ python generate_test_tfrecord.py
 ```
 
 ### About Scripts
@@ -89,7 +89,7 @@ If you have errors related to VRAM capacity, you may reduce the batch size in co
 ### 3. Train now!
 Go to `models/research/object_detection/legacy` and type
 ```bash
-python train.py --logtostderr --train_dir="training/" --pipeline_config_path="training/ssd_mobilenet_v1_coco.config"
+$ python train.py --logtostderr --train_dir="training/" --pipeline_config_path="training/ssd_mobilenet_v1_coco.config"
 ```
 
 #### Warning
@@ -98,5 +98,5 @@ If you have error related to `tf.contrib.data.parallel_interleave` please do the
 ### 4. Export the trained model
 Go to `models/research/object_detection` and type
 ```bash
-python export_inference_graph.py --input_type image_tensor --pipeline_config_path "training/ssd_mobilenet_v1_coco.config" --trained_checkpoint_prefix "training/model.ckpt-4499" --output_directory "/home/bilal/gesture_recognition"
+$ python export_inference_graph.py --input_type image_tensor --pipeline_config_path "training/ssd_mobilenet_v1_coco.config" --trained_checkpoint_prefix "training/model.ckpt-4499" --output_directory "/home/bilal/gesture_recognition"
 ```

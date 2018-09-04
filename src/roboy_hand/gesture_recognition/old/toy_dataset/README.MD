@@ -10,10 +10,10 @@ You can find detailed version of research and implementation in [here](https://d
 The scripts are written in Jupyter Notebook and Python 3.6. I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 3.6.
 
 First install required packages.
-* `pip3 install numpy==1.14.5`
-* `pip3 install scikit-image==0.13.0`
-* `pip3 install scikit-learn==0.19.1`
-* `pip3 install opencv-contrib-python`
+* `$ pip3 install numpy==1.14.5`
+* `$ pip3 install scikit-image==0.13.0`
+* `$ pip3 install scikit-learn==0.19.1`
+* `$ pip3 install opencv-contrib-python`
 
 You also need Jupyter Notebook. Follow the installing instructions from here: http://jupyter.readthedocs.io/en/latest/install.html
 
@@ -29,7 +29,7 @@ Go to [website](http://www.idiap.ch/resource/gestures/), then download train and
 ##### 3. Make sure that you can run PyTorch with NVIDIA CUDA libraries.
 Without GPU, training process may take a long time.
 
-```sh
+```python
 import torch
 if torch.cuda.is_available():
     print("You can use GPU!")
