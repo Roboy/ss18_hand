@@ -57,10 +57,14 @@ $ python generate_test_tfrecord.py
 ├── images
 │   ├── test
 │   │   ├── P10_G10_0.png
-│   │   └── P10_G10_0.xml
+│   │   ├── P10_G10_0.xml
+│   │   ├── ...
+│   │   └── P9_G9_9.xml
 │   └── train
 │       ├── P10_G10_1.png
-│       └── P10_G10_1.xml
+│       ├── P10_G10_1.xml
+│       ├── ...
+│       └── P9_G9_8.xml
 ├── training
 │   └── ssd_mobilenet_v1_coco.config
 └── xml_to_csv.py
