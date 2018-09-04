@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>rgb_kinect_leap_dataset</folder>
+	<filename>P1_G1_6.png</filename>
+	<path>/home/bilal/hand_segmentation/rgb_kinect_leap_dataset/P1_G1_6.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>960</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>hand</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>566</xmin>
+			<ymin>220</ymin>
+			<xmax>737</xmax>
+			<ymax>383</ymax>
+		</bndbox>
+	</object>
+</annotation>

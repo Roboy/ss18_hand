@@ -1,0 +1,26 @@
+<annotation>
+	<folder>rgb</folder>
+	<filename>P4_G4_6.png</filename>
+	<path>C:\Users\Yusuf\Desktop\rgb\P4_G4_6.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>960</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>hand</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>550</xmin>
+			<ymin>315</ymin>
+			<xmax>752</xmax>
+			<ymax>528</ymax>
+		</bndbox>
+	</object>
+</annotation>
