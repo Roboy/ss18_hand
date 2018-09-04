@@ -12,16 +12,8 @@ bColors = {'HEADER': '\033[95m', 'OKBLUE': '\033[94m', 'OKGREEN': '\033[92m', 'W
 
 sys.path.append('..')
 
-# Path to frozen detection graph. This is the actual model that is used for the object detection.
-# FROZEN_GRAPH_PATH='/home/bilal/hands-detection/training/saved_model/frozen_inference_graph.pb'
-
-# FROZEN_GRAPH_PATH='/home/bilal/hand_segmentation/frozen_inference_graph.pb'
-
-# FROZEN_GRAPH_PATH='/home/bilal/handtracking/hand_inference_graph/frozen_inference_graph_141 14-51-46-798.pb'
-# FROZEN_GRAPH_PATH = '/home/bilal/handtracking/hand_inference_graph/frozen_inference_graph.pb'
-
 # Path of the exported frozen model
-FROZEN_GRAPH_PATH = '../frozen_inference_graph.pb'
+FROZEN_GRAPH_PATH = '../frozen_graph/frozen_inference_graph.pb'
 
 # List of the strings that is used to add correct label for each box.
 PATH_TO_LABELS = '../data/hands_label_map.pbtxt'
