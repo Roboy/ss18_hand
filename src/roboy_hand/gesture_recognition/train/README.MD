@@ -8,7 +8,7 @@ You can find detailed version of research and implementation in [here](https://d
 
 ## Getting Started
 ### Prequisites
-In order to run the scripts with **ROS Kinetic**, you must use Python 2.7. I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 2.7.
+I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 2.7.
 
 First install required packages.
 * `pip install Pillow==5.1.0`
@@ -18,7 +18,7 @@ First install required packages.
 ## How to setup
 
 ### 0. Tensorflow Object Detection API
-Please following the guide on installing [Tensorflow and Tensorflow Object Detection API](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md)
+Please follow the guide on installing [Tensorflow and Tensorflow Object Detection API](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md)
 
 ### 1. Download the dataset
 Go to [Hand Gesture Dataset website](http://lttm.dei.unipd.it/downloads/gesture/#kinect_leap) and download the Microsoft Kinect and Leap Motion Dataset or [click here.](http://lttm.dei.unipd.it/downloads/gesture/kinect_leap/data/kinect_leap_dataset.zip)
@@ -35,7 +35,7 @@ generate_test_tfrecord.py
 ```
 
 ### About Scripts
-* `get_rgb_images_from_kinect_dataset.py` get the RGB images from the dataset and puts all of them in a sinle directory.
+* `get_rgb_images_from_kinect_dataset.py` gets the RGB images from the dataset and puts all of them in a sinle directory.
 * `clean_dataset.py` splits dataset (80% training and 20% test) and puts labels and images in their corresponding directories.
 * `xml_to_csv.py` combines all xml files into csv file for training and test individually.
 * `generate_train_tfrecord.py` generates tfrecord file for training.
