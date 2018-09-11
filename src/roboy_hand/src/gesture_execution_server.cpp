@@ -23,20 +23,13 @@ using namespace std;
 bool execute(roboy_hand::GestureExecution::Request &req,
              roboy_hand::GestureExecution::Response &res)
 {
-    //res.jointAngles = req.gesture;        //publish angles to topic: roboy/middleware/FingerCommand
+
     roboy_communication_middleware::FingerCommand msg_finger;
     std::vector<roboy_communication_middleware::FingerCommand> msg_finger_vector;
     roboy_communication_middleware::HandSimCommand msg_hand;
 
     ifstream lut;
-    /*
-    char cCurrentPath[FILENAME_MAX];
 
-    if (!getcwd(cCurrentPath, sizeof(cCurrentPath)))
-    {
-        ROS_ERROR("Couldnt get folder name!");
-    }
-    */
     string file_name = ros::package::getPath("roboy_hand");
     file_name += "/src/ges_lut.txt";
     cout << file_name << endl;
@@ -46,16 +39,6 @@ bool execute(roboy_hand::GestureExecution::Request &req,
     if(!lut.is_open()) ROS_ERROR("FILE NOT FOUND!");
     int ges_index;
     float joints[5][4] = {0};
-/*
-    int index;
-    lut >> index;
-    cout << index << endl;
-    for(int i=0; i<5; i++){
-        lut >> joints[i][0] >> joints[i][1] >> joints[i][2] >> joints[i][3];
-        cout << joints[i][0] << " " << joints[i][1] << " " << joints[i][2] << " " << joints[i][3] << endl;
-    }
-*/
-    //cout << req.gesture << endl;
 
     for(int i=0; i<req.gesture; i++){
         lut >> ges_index;
@@ -90,36 +73,7 @@ bool execute(roboy_hand::GestureExecution::Request &req,
     }
 
 
-/*
-    for(int i=0; i < 5 ; i++){
-        while(!msg_finger.angles.empty()) msg_finger.angles.pop_back();
-        if(i != 2){
-            msg_finger.id = 0;
-            msg_finger.finger = i;
-            //msg_finger.angles.erase(msg_finger.angles.begin(),msg_finger.angles.begin()+4);
-            msg_finger.angles.push_back(-20);
-            msg_finger.angles.push_back(0);
-            msg_finger.angles.push_back(109);
-            msg_finger.angles.push_back(69);
-            msg_hand.fingerMsg.push_back(msg_finger);
-        }
-        else{
-            //while(!msg_finger.angles.empty) msg_finger.angles.pop_back();
-            //msg_finger.angles.erase(msg_finger.angles.begin(),msg_finger.angles.begin()+4);
-            msg_finger.id = 0;
-            msg_finger.finger = i;
-            msg_finger.angles.push_back(0);
-            msg_finger.angles.push_back(0);
-            msg_finger.angles.push_back(0);
-            msg_finger.angles.push_back(0);
-
-            msg_hand.fingerMsg.push_back(msg_finger);
-        }
-    }
-
-    */
     lut.close();
-    //msg_hand = msg_finger_vector;
     res.msg = msg_hand;
     return true;
 
