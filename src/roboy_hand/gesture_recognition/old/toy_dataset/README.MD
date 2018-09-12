@@ -1,9 +1,7 @@
 # Gesture Recognition with Toy Dataset
-Roboy wishes to understand the gestures. In order to do that Roboy needs to figure out the meaning of a gesture.
 
 ## About
 This repository contains the scripts for training and testing to understand hand classification better.
-You can find detailed version of research and implementation in [here](https://devanthro.atlassian.net/wiki/spaces/SS18/pages/280952998/Gesture+Recognition).
 
 ## Getting Started
 ### Prequisites

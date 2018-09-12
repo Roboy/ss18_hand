@@ -1,5 +1,4 @@
 # Gesture Recognition Run
-Roboy wishes to understand the gestures. In order to do that Roboy needs to figure out the meaning of a gesture.
 
 ## About
 This repository contains the necessary files to run previously trained **SSD**.

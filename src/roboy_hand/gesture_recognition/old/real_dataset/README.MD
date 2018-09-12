@@ -1,10 +1,7 @@
 # Gesture Recognition with Real Dataset
-Roboy wishes to understand the gestures. In order to do that Roboy needs to figure out the meaning of a gesture.
-
 
 ## About
-This repository contains the scripts for training different architectures to help Roboy understand the meaning of gestures. The dataset contains 10 different gestures.
-You can find detailed version of research and implementation in [here](https://devanthro.atlassian.net/wiki/spaces/SS18/pages/280952998/Gesture+Recognition).
+This repository contains the scripts for training different architectures to help Roboy understand the meaning of gestures.
 
 ## Getting Started
 ### Prequisites

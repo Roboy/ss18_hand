@@ -1,4 +1,18 @@
 # Gesture Recognition
+Roboy wishes to understand the gestures. In order to do that Roboy needs to figure out the meaning of a gesture.
+
+## About
+This repository contains scripts used to train a hand detector using Tensorflow and documents them. The goal of this repository is to detect 10 different gestures that are in [this dataset](http://lttm.dei.unipd.it/downloads/gesture/#kinect_leap)
+
+<img src="images/default.gif" width="33.3%"><img src="images/labeled.gif" width="33.3%">
+Dataset input and its corresponding output side-by-side.
+
+You can
+* watch 1 minute presentation video of the project from [here.](https://drive.google.com/file/d/1Mz4dRa_b8zSc3BKTFTgVgpiczT_cXwGI/view)
+* check project presentation from [here.](https://drive.google.com/open?id=1F4Pl8aalB-aTRqPhwM_kZe3C9DQW97XoO-QHTRtjcds)
+* check detailed explanation of the project from [here.](https://devanthro.atlassian.net/wiki/spaces/SS18/pages/280952998/Gesture+Recognition)
+
+## Repository folders
 This repository contains three folders.
 * old
 * run
@@ -12,10 +26,10 @@ In **run** folder you will find the necessary scripts to run trained network to 
 
 In **train** folder you will find the necessary scripts to train a neural network to detect hand gestures.
 
-You can see detailed explanations in corresponding folders. 
+You can see detailed explanations in corresponding folders.
 
 # References
-https://github.com/victordibia/handtracking
+Victor Dibia, Real-time Hand-Detection using Neural Networks (SSD) on Tensorflow, (2017), GitHub repository, https://github.com/victordibia/handtracking
 
 https://pythonprogramming.net/training-custom-objects-tensorflow-object-detection-api-tutorial/
 

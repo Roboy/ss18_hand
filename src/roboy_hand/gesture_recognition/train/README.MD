@@ -1,10 +1,7 @@
 # Gesture Recognition Training
-Roboy wishes to understand the gestures. In order to do that Roboy needs to figure out the meaning of a gesture.
-
 
 ## About
-This repository contains the necessary files for training **S**ingle **S**hot Multibox **D**etector (SSD) for hand gesture recognition. The dataset contains 10 different gestures.
-You can find detailed version of research and implementation in [here](https://devanthro.atlassian.net/wiki/spaces/SS18/pages/280952998/Gesture+Recognition).
+This repository contains the necessary files for training **S**ingle **S**hot Multibox **D**etector (SSD) for hand gesture recognition.
 
 ## Getting Started
 ### Prequisites
