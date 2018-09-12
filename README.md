@@ -75,7 +75,7 @@ $ rviz
 $ rostopic pub /gesture_recognition std_msgs/Int64 "data: 0" 
 ```
 for now we have gesture id from 0 to 9 correspond to gesture 1 to 10 in the picture below:
-![title](https://api.media.atlassian.com/file/a3a6e6f8-389f-4003-a418-29fde62307d5/image?mode=full-fit&client=3b331dc2-3ab9-4700-b443-e98a909fd623&token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIzYjMzMWRjMi0zYWI5LTQ3MDAtYjQ0My1lOThhOTA5ZmQ2MjMiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmEzYTZlNmY4LTM4OWYtNDAwMy1hNDE4LTI5ZmRlNjIzMDdkNSI6WyJyZWFkIl19LCJleHAiOjE1MzY3NjgwOTQsIm5iZiI6MTUzNjc2NDczNH0.ayniOM1s9M0fngWqzoLbFqRbcNl0qVC_0Xn3-xoEgts)
+![title](https://api.media.atlassian.com/file/a3a6e6f8-389f-4003-a418-29fde62307d5/image?mode=full-fit&client=3b331dc2-3ab9-4700-b443-e98a909fd623&token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIzYjMzMWRjMi0zYWI5LTQ3MDAtYjQ0My1lOThhOTA5ZmQ2MjMiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmEzYTZlNmY4LTM4OWYtNDAwMy1hNDE4LTI5ZmRlNjIzMDdkNSI6WyJyZWFkIl19LCJleHAiOjE1MzY3NjgwOTQsIm5iZiI6MTUzNjc2NDczNH0.ayniOM1s9M0fngWqzoLbFqRbcNl0qVC_0Xn3-xoEgts | width = 600)
 
 # Further Info
 For more info on the project visit our Confluence Page:
