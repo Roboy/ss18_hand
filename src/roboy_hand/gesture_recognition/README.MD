@@ -4,9 +4,10 @@
 This repository contains scripts used to train a hand detector using Tensorflow and documents them. The goal of this repository is to detect 10 different gestures that are in [this dataset](http://lttm.dei.unipd.it/downloads/gesture/#kinect_leap)
 
 Dataset input and its corresponding output side-by-side.
+
 | Raw Dataset Input | Output |
-|:-----------------:|:------:|
-|       ![Raw Dataset Input](images/default.gif)       |  ![Output](images/labeled.gif)  |
+|-----------------|------|
+|        ![Raw Dataset Input](images/default.gif)       |  ![Output](images/labeled.gif)  |
 
 You can
 * watch 1 minute presentation video of the project from [here.](https://drive.google.com/file/d/1Mz4dRa_b8zSc3BKTFTgVgpiczT_cXwGI/view)
