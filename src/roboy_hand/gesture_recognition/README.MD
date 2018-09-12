@@ -1,10 +1,10 @@
 # Gesture Recognition
-Roboy wishes to understand the gestures. In order to do that Roboy needs to figure out the meaning of a gesture.
 
 ## About
 This repository contains scripts used to train a hand detector using Tensorflow and documents them. The goal of this repository is to detect 10 different gestures that are in [this dataset](http://lttm.dei.unipd.it/downloads/gesture/#kinect_leap)
 
-<img src="images/default.gif" width="33.3%"><img src="images/labeled.gif" width="33.3%">
+![Raw Dataset Input]("images/default.gif")
+![Output]("images/labeled.gif")
 Dataset input and its corresponding output side-by-side.
 
 You can
