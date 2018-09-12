@@ -24,6 +24,11 @@ Install the version for Linux: https://developer.leapmotion.com/sdk/v2
 $ cd /path/to/ss18_hand
 $ catkin_make
 $ source devel/setup.bash	# add this to your ~/.bashrc
+$ export CONFIG_PATH="PATH_TO_THIS_RESPOSITORY/ss18_hand/src/roboy_moveit_configs" # add this to your ~/.bashrc
+```
+And link the hand model to Gazebo:
+```sh
+$ ln -s PATH_TO_THIS_RESPOSITORY/ss18_hand/src/roboy_models/left_hand ~/.gazebo/models/left_hand
 ```
 ## Play with it
 ##### 1. Execute gestures with predefined joint angles
@@ -54,6 +59,23 @@ $ rosrun leap_motion sender.py
 ```sh
 $ rostopic echo /roboy/middleware/FingerCommand 
 ```
+#### 3. Execute gesture with look-up-table
+- Launch the gesture_execution.launch file to start the necessary nodes
+```sh
+$ roslaunch roboy_hand gesture_execution.launch model_name:=left_hand
+```
+to terminate it: press ctrl+c, q, enter, y, enter
+- Open a new terminal and start rviz for visualization of the model
+```sh
+$ rviz
+```
+- If you have started the gesture recognition program, the detected gesture will be actuated on the model
+- Or you can also publish message to the ROS topic /gesture_recognition to execute gesture from the look-up-table
+```sh
+$ rostopic pub /gesture_recognition std_msgs/Int64 "data: 0" 
+```
+for now we have gesture id from 0 to 9 correspond to gesture 1 to 10 in the picture below:
+https://api.media.atlassian.com/file/a3a6e6f8-389f-4003-a418-29fde62307d5/image?mode=full-fit&client=3b331dc2-3ab9-4700-b443-e98a909fd623&token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIzYjMzMWRjMi0zYWI5LTQ3MDAtYjQ0My1lOThhOTA5ZmQ2MjMiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmEzYTZlNmY4LTM4OWYtNDAwMy1hNDE4LTI5ZmRlNjIzMDdkNSI6WyJyZWFkIl19LCJleHAiOjE1MzY3NjgwOTQsIm5iZiI6MTUzNjc2NDczNH0.ayniOM1s9M0fngWqzoLbFqRbcNl0qVC_0Xn3-xoEgts
 
 # Further Info
 For more info on the project visit our Confluence Page:
