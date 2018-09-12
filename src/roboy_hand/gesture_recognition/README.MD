@@ -33,7 +33,7 @@ You can see detailed explanations in corresponding folders.
 # References
 Victor Dibia, Real-time Hand-Detection using Neural Networks (SSD) on Tensorflow, (2017), GitHub repository, https://github.com/victordibia/handtracking
 
-https://pythonprogramming.net/training-custom-objects-tensorflow-object-detection-api-tutorial/
+Harrison Kinsley, Introduction and Use - Tensorflow Object Detection API Tutorial, (August 2018), https://pythonprogramming.net/training-custom-objects-tensorflow-object-detection-api-tutorial
 
 G. Marin, F. Dominio, P. Zanuttigh, "Hand gesture recognition with Leap Motion and Kinect devices", IEEE International Conference on Image Processing (ICIP), Paris, France, 2014
 
