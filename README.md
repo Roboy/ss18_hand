@@ -16,7 +16,8 @@ $ git clone https://github.com/Roboy/ss18_hand.git
 $ git submodule init
 $ git submodule update
 ```
-#### 2. Install Leap Motion SDK
+#### 2. Install packages for gesture recognition (follow steps [here](https://github.com/Roboy/ss18_hand/tree/devel/src/roboy_hand/gesture_recognition/run))
+#### 3. Install Leap Motion SDK (only if you want to use this function)
 Install the version for Linux: https://developer.leapmotion.com/sdk/v2
 
 ## Build the project
@@ -69,7 +70,7 @@ to terminate it: press ctrl+c, q, enter, y, enter
 ```sh
 $ rviz
 ```
-- If you have started the gesture recognition program, the detected gesture will be actuated on the model. (to run the neural network, follow the steps [here])
+- If you have started the gesture recognition program, the detected gesture will be actuated on the model. (to run the neural network, follow the steps [here](https://github.com/Roboy/ss18_hand/tree/devel/src/roboy_hand/gesture_recognition/run))
 - Or you can also publish message to the ROS topic /gesture_recognition to execute gesture from the look-up-table
 ```sh
 $ rostopic pub /gesture_recognition std_msgs/Int64 "data: 0" 
@@ -85,4 +86,3 @@ https://devanthro.atlassian.net/wiki/spaces/SS18/pages/235601936/Hand
 
    [gesture_recognition]: <https://github.com/Roboy/ss18_hand/tree/devel/src/roboy_hand/gesture_recognition>
    [ROS Kinetic]: <http://wiki.ros.org/kinetic/Installation>
-   [here]: <https://github.com/Roboy/ss18_hand/tree/devel/src/roboy_hand/gesture_recognition/run>
