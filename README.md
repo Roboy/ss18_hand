@@ -69,14 +69,15 @@ to terminate it: press ctrl+c, q, enter, y, enter
 ```sh
 $ rviz
 ```
-- If you have started the gesture recognition program, the detected gesture will be actuated on the model
+- If you have started the gesture recognition program, the detected gesture will be actuated on the model. (to run the neural network, follow the steps [here])
 - Or you can also publish message to the ROS topic /gesture_recognition to execute gesture from the look-up-table
 ```sh
 $ rostopic pub /gesture_recognition std_msgs/Int64 "data: 0" 
 ```
 for now we have gesture id from 0 to 9 corresponding to gesture 1 to 10 in the picture below:
 <p align="center">
-  <img src="https://api.media.atlassian.com/file/a3a6e6f8-389f-4003-a418-29fde62307d5/image?mode=full-fit&client=3b331dc2-3ab9-4700-b443-e98a909fd623&token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIzYjMzMWRjMi0zYWI5LTQ3MDAtYjQ0My1lOThhOTA5ZmQ2MjMiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmEzYTZlNmY4LTM4OWYtNDAwMy1hNDE4LTI5ZmRlNjIzMDdkNSI6WyJyZWFkIl19LCJleHAiOjE1MzY3NjgwOTQsIm5iZiI6MTUzNjc2NDczNH0.ayniOM1s9M0fngWqzoLbFqRbcNl0qVC_0Xn3-xoEgts" data-canonical-src="https://api.media.atlassian.com/file/a3a6e6f8-389f-4003-a418-29fde62307d5/image?mode=full-fit&client=3b331dc2-3ab9-4700-b443-e98a909fd623&token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIzYjMzMWRjMi0zYWI5LTQ3MDAtYjQ0My1lOThhOTA5ZmQ2MjMiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmEzYTZlNmY4LTM4OWYtNDAwMy1hNDE4LTI5ZmRlNjIzMDdkNSI6WyJyZWFkIl19LCJleHAiOjE1MzY3NjgwOTQsIm5iZiI6MTUzNjc2NDczNH0.ayniOM1s9M0fngWqzoLbFqRbcNl0qVC_0Xn3-xoEgts" width="700" height="500" />
+  ![gestures](images/gesture.png)
+  
 </p>
 
 # Further Info
@@ -85,3 +86,4 @@ https://devanthro.atlassian.net/wiki/spaces/SS18/pages/235601936/Hand
 
    [gesture_recognition]: <https://github.com/Roboy/ss18_hand/tree/devel/src/roboy_hand/gesture_recognition>
    [ROS Kinetic]: <http://wiki.ros.org/kinetic/Installation>
+   [here]: <https://github.com/Roboy/ss18_hand/tree/devel/src/roboy_hand/gesture_recognition/run>
