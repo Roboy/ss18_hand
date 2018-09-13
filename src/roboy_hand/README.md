@@ -16,7 +16,8 @@ $ git clone https://github.com/Roboy/ss18_hand.git
 $ git submodule init
 $ git submodule update
 ```
-#### 2. Install Leap Motion SDK
+#### 2. Install packages for gesture recognition (follow steps [here](https://github.com/Roboy/ss18_hand/tree/devel/src/roboy_hand/gesture_recognition/run))
+#### 3. Install Leap Motion SDK (only if you want to use this function)
 Install the version for Linux: https://developer.leapmotion.com/sdk/v2
 
 ## Build the project
@@ -24,6 +25,11 @@ Install the version for Linux: https://developer.leapmotion.com/sdk/v2
 $ cd /path/to/ss18_hand
 $ catkin_make
 $ source devel/setup.bash	# add this to your ~/.bashrc
+$ export CONFIG_PATH="PATH_TO_THIS_RESPOSITORY/ss18_hand/src/roboy_moveit_configs" # add this to your ~/.bashrc
+```
+And link the hand model to Gazebo:
+```sh
+$ ln -s PATH_TO_THIS_RESPOSITORY/ss18_hand/src/roboy_models/left_hand ~/.gazebo/models/left_hand
 ```
 ## Play with it
 ##### 1. Execute gestures with predefined joint angles
@@ -54,6 +60,25 @@ $ rosrun leap_motion sender.py
 ```sh
 $ rostopic echo /roboy/middleware/FingerCommand 
 ```
+#### 3. Execute gesture with look-up-table
+- Launch the gesture_execution.launch file to start the necessary nodes
+```sh
+$ roslaunch roboy_hand gesture_execution.launch model_name:=left_hand
+```
+to terminate it: press ctrl+c, q, enter, y, enter
+- Open a new terminal and start rviz for visualization of the model
+```sh
+$ rviz
+```
+- If you have started the gesture recognition program, the detected gesture will be actuated on the model. (to run the neural network, follow the steps [here])
+- Or you can also publish message to the ROS topic /gesture_recognition to execute gesture from the look-up-table
+```sh
+$ rostopic pub /gesture_recognition std_msgs/Int64 "data: 0" 
+```
+for now we have gesture id from 0 to 9 corresponding to gesture 1 to 10 in the picture below:
+<p align="center">
+  <img src="images/gestures.png" width="700" >
+</p>
 
 # Further Info
 For more info on the project visit our Confluence Page:
@@ -61,3 +86,4 @@ https://devanthro.atlassian.net/wiki/spaces/SS18/pages/235601936/Hand
 
    [gesture_recognition]: <https://github.com/Roboy/ss18_hand/tree/devel/src/roboy_hand/gesture_recognition>
    [ROS Kinetic]: <http://wiki.ros.org/kinetic/Installation>
+   [here]: <https://github.com/Roboy/ss18_hand/tree/devel/src/roboy_hand/gesture_recognition/run>
