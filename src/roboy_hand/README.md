@@ -77,7 +77,7 @@ $ rostopic pub /gesture_recognition std_msgs/Int64 "data: 0"
 ```
 for now we have gesture id from 0 to 9 corresponding to gesture 1 to 10 in the picture below:
 <p align="center">
-  <img src="images/gestures.png" width="700" >
+  <img src="../../images/gestures.png" width="700" >
 </p>
 
 # Further Info
