@@ -8,7 +8,7 @@ Dataset input and its corresponding output side-by-side.
 
 |    Input    |    Output   |
 |:-----------:|:-----------:|
-| <img src="images/default.gif" width="50%"> | <img src="images/labeled.gif" width="50%"> |
+| <img src="images/default.gif"> | <img src="images/labeled.gif"> |
 
 You can
 * watch 1 minute presentation video of the project from [here.](https://drive.google.com/file/d/1Mz4dRa_b8zSc3BKTFTgVgpiczT_cXwGI/view)
