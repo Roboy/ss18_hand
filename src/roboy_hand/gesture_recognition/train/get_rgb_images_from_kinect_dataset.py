@@ -6,8 +6,9 @@ root_path = os.path.join(os.getcwd(), 'kinect_leap_dataset', 'acquisitions')
 p_id = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10', 'P11', 'P12', 'P13', 'P14']
 g_id = ['G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8', 'G9', 'G10']
 
-dest_path = os.path.join(os.path.dirname(os.getcwd()), 'rgb_kinect_leap_dataset')
-os.makedirs(dest_path)
+dest_path = os.path.join(os.getcwd(), 'rgb_kinect_leap_dataset')
+if not os.path.exists(dst_train):
+	os.makedirs(dest_path)
 
 for p in p_id:
     for g in g_id:

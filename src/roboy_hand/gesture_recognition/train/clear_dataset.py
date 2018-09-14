@@ -8,8 +8,10 @@ dir = os.getcwd()
 dst_train = os.path.join(dir, 'images', 'train')
 dst_test = os.path.join(dir, 'images', 'test')
 
-os.makedirs(dst_train)
-os.makedirs(dst_test)
+if not os.path.exists(dst_train):
+	os.makedirs(dst_train)
+if not os.path.exists(dst_test):
+	os.makedirs(dst_test)
 
 src_images = os.path.join(dir, 'rgb_kinect_leap_dataset')
 src_labels = os.path.join(dir, 'rgb_kinect_leap_dataset_labels')

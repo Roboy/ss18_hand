@@ -27,8 +27,8 @@ Then, run the following scripts in the following order:
 $ python get_rgb_images_from_kinect_dataset.py
 $ python clear_dataset.py
 $ python xml_to_csv.py
-$ python generate_train_tfrecord.py
-$ python generate_test_tfrecord.py
+$ python generate_train_tfrecord.py --csv_input=data/train_labels.csv --output_path=data/train.record
+$ python generate_test_tfrecord.py --csv_input=data/test_labels.csv --output_path=data/test.record
 ```
 
 ### About Scripts
