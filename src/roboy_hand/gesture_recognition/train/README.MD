@@ -88,9 +88,9 @@ If you have errors related to VRAM capacity, you may reduce the batch size in co
     * `batch_size`
 
 ### 3. Train now!
-Go to `models/research/object_detection/legacy` and type
+Go to `models/research/object_detection/legacy` and type (fit to your paths)
 ```bash
-$ python train.py --logtostderr --train_dir="training/" --pipeline_config_path="training/ssd_mobilenet_v1_coco.config"
+$ python train.py --logtostderr --train_dir="gesture_recognition/train/training/" --pipeline_config_path="gesture_recognition/train/training/ssd_mobilenet_v1_coco.config"
 ```
 
 #### Warning
