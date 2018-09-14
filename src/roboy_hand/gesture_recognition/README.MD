@@ -6,9 +6,9 @@ This repository contains scripts used to train a hand detector using Tensorflow 
 
 Dataset input and its corresponding output side-by-side.
 
-| Raw Dataset Input | Output |
-|-----------------|------|
-|        ![Raw Dataset Input](images/default.gif)       |  ![Output](images/labeled.gif)  |
+|    Input    |    Output   |
+|:-----------:|:-----------:|
+| default.gif | labeled.gif |
 
 You can
 * watch 1 minute presentation video of the project from [here.](https://drive.google.com/file/d/1Mz4dRa_b8zSc3BKTFTgVgpiczT_cXwGI/view)
