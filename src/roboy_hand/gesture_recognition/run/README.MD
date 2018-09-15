@@ -4,6 +4,7 @@
 This repository contains the necessary files to run previously trained **SSD**.
 
 ## Getting Started
+
 ### Prequisites
 In order to run the scripts with **ROS Kinetic**, you must use Python 2.7. I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 2.7.
 
@@ -30,6 +31,7 @@ $ roscore&
 ### 2. Set up specific camera
 The script needs a camera to work with. If you have one camera you do not have to change anything.
 However, if you have more than one camera:
+
 #### 2.1 Check devices
 ```bash
 $ ls -ltrh /dev/video*
@@ -48,6 +50,8 @@ cap = cv2.VideoCapture(0) # cap = cv2.VideoCapture(-1)
 ```bash
 $ python detect_gestures.py
 ```
+
+> If you get `Permission Denied` type of errors, run the script with admin privileges.
 
 ### About Scripts
 * `detect_gestures.py` creates a ROS publisher and detects gestures.

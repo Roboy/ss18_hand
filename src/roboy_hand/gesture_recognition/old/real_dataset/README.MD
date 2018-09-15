@@ -4,6 +4,7 @@
 This repository contains the scripts for training different architectures to help Roboy understand the meaning of gestures.
 
 ## Getting Started
+
 ### Prequisites
 The scripts are written in Jupyter Notebook and Python 3.6. I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 3.6.
 
@@ -30,8 +31,10 @@ https://pytorch.org/
 
 ##### 1. Download the dataset
 Go to [Hand Gesture Dataset website](http://lttm.dei.unipd.it/downloads/gesture/#kinect_leap) and download the Microsoft Kinect and Leap Motion Dataset or [click here.](http://lttm.dei.unipd.it/downloads/gesture/kinect_leap/data/kinect_leap_dataset.zip)
+
 ##### 2. Extract it to same folder which has training scripts.
 You should read **readme** and **gestures** files after extracting it for more details about the dataset and gestures.
+
 ##### 3. Make sure that you can run PyTorch with NVIDIA CUDA libraries.
 Without GPU, training process may take a long time.
 
@@ -42,6 +45,7 @@ if torch.cuda.is_available():
 else:
     print("You can not use GPU!")
 ```
+
 ### About Scripts
 The naming scheme follow this order:
 ```sh
@@ -53,7 +57,7 @@ leap_[rgb|depth]_train_[Model Architecture][_preprocessed]?
 
 ![equation](https://latex.codecogs.com/gif.latex?X_{new}&space;=&space;\frac{X_{old}-\mu}{\sigma}\newline&space;\mu:\text{Mean&space;value&space;of&space;the&space;dataset.}\newline&space;\sigma:\text{Standard&space;deviation&space;of&space;the&space;dataset.})
 
-When your the script finishes training it will save the trained model under **saved_models** folder with the following naming scheme:
+When the script finishes training it will save the trained model under **saved_models** folder with the following naming scheme:
 ```sh
 [Model Architecture]_[rgb|depth]_[Number of Epochs]_[YYYY-MM-DD]_[HH-MM-SS].model
 ```

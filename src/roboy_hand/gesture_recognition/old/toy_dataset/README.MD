@@ -4,6 +4,7 @@
 This repository contains the scripts for training and testing to understand hand classification better.
 
 ## Getting Started
+
 ### Prequisites
 The scripts are written in Jupyter Notebook and Python 3.6. I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 3.6.
 
@@ -25,8 +26,10 @@ https://pytorch.org/
 
 ##### 1. Download the dataset
 Go to [website](http://www.idiap.ch/resource/gestures/), then download train and test datasets of **Sebastien Marcel Static Hand Posture Database** or [click here](http://www.idiap.ch/resource/gestures/data/shp_marcel_train.tar.gz) and [click here.](http://www.idiap.ch/resource/gestures/data/shp_marcel_test.tar.gz) 
+
 ##### 2. Extract it to same folder which has training scripts.
 **Marcel-Train** and **Marcel-Test** folder should be in the same folder with the scripts.
+
 ##### 3. Make sure that you can run PyTorch with NVIDIA CUDA libraries.
 Without GPU, training process may take a long time.
 
@@ -37,6 +40,7 @@ if torch.cuda.is_available():
 else:
     print("You can not use GPU!")
 ```
+
 ### About Scripts
 The naming scheme follow this order:
 ```sh
@@ -44,8 +48,7 @@ toy_[gray|rgb]
 ```
 * [rgb|rgb] indicates whether training images are RGB or gray-scale images.
 
-
-When your the script finishes training it will save the trained model under **saved_models** folder with the following naming scheme:
+When the script finishes training it will save the trained model under **saved_models** folder with the following naming scheme:
 ```sh
 [Model Architecture]_[rgb|gray]_[Number of Epochs]_[YYYY-MM-DD]_[HH-MM-SS].model
 ```

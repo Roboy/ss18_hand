@@ -4,6 +4,7 @@
 This repository contains the necessary files for training **S**ingle **S**hot Multibox **D**etector (SSD) for hand gesture recognition.
 
 ## Getting Started
+
 ### Prequisites
 I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 2.7.
 
@@ -40,8 +41,10 @@ $ python generate_test_tfrecord.py --csv_input=data/test_labels.csv --output_pat
 * `generate_test_tfrecord` generates tfrecord file for test.
 
 ## Training
+
 ### 1. Folder tree should be like below.
 After running the scripts above, folder tree should be like below.
+
 ```bash
 ├── clean_dataset.py
 ├── data
