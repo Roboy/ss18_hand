@@ -28,7 +28,10 @@ WAITING_TIME = 5  # seconds
 # Sets CPU priority
 # In Linux systems -20 highest priority, 0 normal, 20 lowest
 PRIORITY = -20
-os.nice(PRIORITY)
+try:
+	os.nice(PRIORITY)
+except:
+	detector_utils.print_log_colorful(detector_utils.bColors['RED'], 'You do not have admin rights.')
 
 
 # Check all the elements in a list is the same.
