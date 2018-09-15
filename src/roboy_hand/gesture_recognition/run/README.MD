@@ -10,7 +10,10 @@ In order to run the scripts with **ROS Kinetic**, you must use Python 2.7. I hig
 Please follow the instructions to install [ROS Kinetic.](wiki.ros.org/kinetic/Installation/)
 Please follow the guide on installing [Tensorflow and Tensorflow Object Detection API](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md)
 
-First install required packages.
+Install required packages.
+
+> If you will use Anaconda, install the extra packages below via `conda` not `pip`.
+
 * `pip install rospy`
 * `pip install opencv-contrib-python`
 * `pip install numpy==1.14.5`
@@ -35,7 +38,7 @@ You will see output like
 `crw-rw----+ 1 root video 81, 0 Eyl  4 15:51 /dev/video0`
 
 #### 2.2 Edit code to work with specific camera
-Open `detect_gesture.py` and change the number to your device number. In our case put **0**, because our output is `/dev/video0`
+Open `detect_gestures.py` and change the number to your device number `(line 164)`. In our case put **0**, because our output is `/dev/video0`
 
 ```python
 cap = cv2.VideoCapture(0) # cap = cv2.VideoCapture(-1)

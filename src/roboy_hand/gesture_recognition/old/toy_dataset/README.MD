@@ -8,6 +8,9 @@ This repository contains the scripts for training and testing to understand hand
 The scripts are written in Jupyter Notebook and Python 3.6. I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 3.6.
 
 First install required packages.
+
+> If you will use Anaconda, install the extra packages below via `conda` not `pip3`.
+
 * `$ pip3 install numpy==1.14.5`
 * `$ pip3 install scikit-image==0.13.0`
 * `$ pip3 install scikit-learn==0.19.1`

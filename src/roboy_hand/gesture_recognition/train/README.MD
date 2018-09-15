@@ -8,6 +8,7 @@ This repository contains the necessary files for training **S**ingle **S**hot Mu
 I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 2.7.
 
 First install required packages.
+> If you will use Anaconda, install the extra packages below via `conda` not `pip`.
 * `$ pip install Pillow==5.1.0`
 * `$ pip install tensorflow-gpu==1.4.1`
 * `$ pip install pandas==0.23.0`
@@ -22,7 +23,7 @@ Go to [Hand Gesture Dataset website](http://lttm.dei.unipd.it/downloads/gesture/
 
 ### 2. Extract it to same folder which has scripts.
 First, extract the dataset and the labels.
-Then, run the following scripts in the following order:
+Then, run the following scripts below in the following order.
 ```bash
 $ python get_rgb_images_from_kinect_dataset.py
 $ python clear_dataset.py
@@ -40,7 +41,7 @@ $ python generate_test_tfrecord.py --csv_input=data/test_labels.csv --output_pat
 
 ## Training
 ### 1. Folder tree should be like below.
-After running the scripts above folder tree should be like this.
+After running the scripts above, folder tree should be like below.
 ```bash
 ├── clean_dataset.py
 ├── data
@@ -89,18 +90,14 @@ If you have errors related to VRAM capacity, you may reduce the batch size in co
     * `batch_size`
 
 ### 3. Train now!
-
-#### Warning
-
-To run codes below, first change paths to fit yours.
+> To run codes below, first change paths to fit yours.
 
 Go to `models/research/object_detection/legacy` and type
 ```bash
 $ python train.py --logtostderr --train_dir="gesture_recognition/train/training/" --pipeline_config_path="gesture_recognition/train/training/ssd_mobilenet_v1_coco.config"
 ```
 
-#### Warning
-If you have error related to `tf.contrib.data.parallel_interleave` please do the changes in this [link.](https://github.com/tensorflow/models/issues/3432#issuecomment-405680652)
+> If you have error related to `tf.contrib.data.parallel_interleave` please do the changes in this [link.](https://github.com/tensorflow/models/issues/3432#issuecomment-405680652)
 
 ### 4. Export the trained model
 Go to `models/research/object_detection` and type
