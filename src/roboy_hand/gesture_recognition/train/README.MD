@@ -40,6 +40,7 @@ $ python generate_test_tfrecord.py --csv_input=data/test_labels.csv --output_pat
 
 ## Training
 ### 1. Folder tree should be like below.
+After running the scripts above folder tree should be like this.
 ```bash
 ├── clean_dataset.py
 ├── data
@@ -88,7 +89,12 @@ If you have errors related to VRAM capacity, you may reduce the batch size in co
     * `batch_size`
 
 ### 3. Train now!
-Go to `models/research/object_detection/legacy` and type (fit to your paths)
+
+#### Warning
+
+To run codes below, first change paths to fit yours.
+
+Go to `models/research/object_detection/legacy` and type
 ```bash
 $ python train.py --logtostderr --train_dir="gesture_recognition/train/training/" --pipeline_config_path="gesture_recognition/train/training/ssd_mobilenet_v1_coco.config"
 ```
@@ -99,5 +105,5 @@ If you have error related to `tf.contrib.data.parallel_interleave` please do the
 ### 4. Export the trained model
 Go to `models/research/object_detection` and type
 ```bash
-$ python export_inference_graph.py --input_type image_tensor --pipeline_config_path "training/ssd_mobilenet_v1_coco.config" --trained_checkpoint_prefix "training/model.ckpt-4499" --output_directory "/home/bilal/gesture_recognition"
+$ python export_inference_graph.py --input_type image_tensor --pipeline_config_path "gesture_recognition/training/ssd_mobilenet_v1_coco.config" --trained_checkpoint_prefix "gesture_recognition/training/model.ckpt-200000" --output_directory "gesture_recognition/"
 ```
