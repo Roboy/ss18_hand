@@ -1,7 +1,7 @@
 # Gesture Recognition Training
 
 ## About
-This repository contains the necessary files for training **S**ingle **S**hot Multibox **D**etector (SSD) for hand gesture recognition.
+This repository contains necessary files for training **S**ingle **S**hot Multibox **D**etector (SSD) for hand gesture recognition.
 
 ## Getting Started
 
@@ -9,7 +9,7 @@ This repository contains the necessary files for training **S**ingle **S**hot Mu
 I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 2.7.
 
 First install required packages.
-> If you will use Anaconda, install the extra packages below via `conda` not `pip`.
+> If you will use Anaconda, install extra packages below via `conda` not `pip`.
 * `$ pip install Pillow==5.1.0`
 * `$ pip install tensorflow-gpu==1.4.1`
 * `$ pip install pandas==0.23.0`
@@ -17,14 +17,14 @@ First install required packages.
 ## How to setup
 
 ### 0. Tensorflow Object Detection API
-Please follow the guide on installing [Tensorflow and Tensorflow Object Detection API](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md)
+Please follow this guide for installing [Tensorflow and Tensorflow Object Detection API.](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md)
 
-### 1. Download the dataset
-Go to [Hand Gesture Dataset website](http://lttm.dei.unipd.it/downloads/gesture/#kinect_leap) and download the Microsoft Kinect and Leap Motion Dataset or [click here.](http://lttm.dei.unipd.it/downloads/gesture/kinect_leap/data/kinect_leap_dataset.zip)
+### 1. Download dataset
+Go to [Hand Gesture Dataset website](http://lttm.dei.unipd.it/downloads/gesture/#kinect_leap) and download Microsoft Kinect and Leap Motion Dataset or [click here.](http://lttm.dei.unipd.it/downloads/gesture/kinect_leap/data/kinect_leap_dataset.zip)
 
 ### 2. Extract it to same folder which has scripts.
-First, extract the dataset and the labels.
-Then, run the following scripts below in the following order.
+First, extract dataset.
+Then, run following scripts below in the following order.
 ```bash
 $ python get_rgb_images_from_kinect_dataset.py
 $ python clear_dataset.py
@@ -34,9 +34,9 @@ $ python generate_test_tfrecord.py --csv_input=data/test_labels.csv --output_pat
 ```
 
 ### About Scripts
-* `get_rgb_images_from_kinect_dataset.py` gets the RGB images from the dataset and puts all of them in a sinle directory.
+* `get_rgb_images_from_kinect_dataset.py` gets RGB images from dataset and puts all of them into single directory.
 * `clean_dataset.py` splits dataset (80% training and 20% test) and puts labels and images in their corresponding directories.
-* `xml_to_csv.py` combines all xml files into csv file for training and test individually.
+* `xml_to_csv.py` combines all xml files into two (training and test) csv files.
 * `generate_train_tfrecord.py` generates tfrecord file for training.
 * `generate_test_tfrecord` generates tfrecord file for test.
 
@@ -73,12 +73,12 @@ After running the scripts above, folder tree should be like below.
 ```
 
 ### 2. Setting up configs
-Tensorflow Object Detection API has more than a dozen pre-trained models with checkpoint files and configuraion files available. Check the [link](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md) for detailed info.
+Tensorflow Object Detection API has more than a dozen pre-trained models with checkpoint files and configuration files available. Check this [link](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md) for detailed information.
 
-I used MobileNet, using the following [checkpoint](download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz) and configuration file.
-Extract the `ssd_mobilenet_v1_coco_11_06_2017.tar.gz` in the `models/research/object_detection` directory.
+I used MobileNet, you can download files from this [link.](download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz)
+Extract `ssd_mobilenet_v1_coco_11_06_2017.tar.gz` in `models/research/object_detection` directory.
 
-You must change the following parameters in the **configuration file**:
+You must change the following parameters in **configuration file**:
 * Under `model`,
     * `fine_tune_checkpoint`
 * Under `train_input_reader`,
@@ -88,7 +88,7 @@ You must change the following parameters in the **configuration file**:
     * `input_path`
     * `label_map_path`
 
-If you have errors related to VRAM capacity, you may reduce the batch size in config file.
+If you have errors related to VRAM capacity, you should reduce batch size in config file.
 * Under `train_config`,
     * `batch_size`
 
@@ -100,9 +100,9 @@ Go to `models/research/object_detection/legacy` and type
 $ python train.py --logtostderr --train_dir="gesture_recognition/train/training/" --pipeline_config_path="gesture_recognition/train/training/ssd_mobilenet_v1_coco.config"
 ```
 
-> If you have error related to `tf.contrib.data.parallel_interleave` please do the changes in this [link.](https://github.com/tensorflow/models/issues/3432#issuecomment-405680652)
+> If you have error related to `tf.contrib.data.parallel_interleave` please do suggested changes in this [link.](https://github.com/tensorflow/models/issues/3432#issuecomment-405680652)
 
-### 4. Export the trained model
+### 4. Export trained model
 Go to `models/research/object_detection` and type
 ```bash
 $ python export_inference_graph.py --input_type image_tensor --pipeline_config_path "gesture_recognition/training/ssd_mobilenet_v1_coco.config" --trained_checkpoint_prefix "gesture_recognition/training/model.ckpt-200000" --output_directory "gesture_recognition/"
