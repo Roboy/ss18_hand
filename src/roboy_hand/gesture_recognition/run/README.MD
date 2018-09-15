@@ -6,7 +6,7 @@ This repository contains necessary files to run previously trained **SSD**.
 ## Getting Started
 
 ### Prequisites
-In order to run the scripts with **ROS Kinetic**, you must use Python 2.7. I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 2.7.
+In order to run the script with **ROS Kinetic**, you must use Python 2.7. I highly recommend you to install [Anaconda](https://www.anaconda.com/download/) for Python 2.7.
 
 Please follow instructions to install [ROS Kinetic.](wiki.ros.org/kinetic/Installation/)
 Please follow this guide for installing [Tensorflow and Tensorflow Object Detection API](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md)
